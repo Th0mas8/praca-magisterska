@@ -74,7 +74,7 @@ customHeadersFooters
 \output_sync 0
 \bibtex_command default
 \index_command default
-\float_placement h
+\float_placement H
 \paperfontsize 12
 \spacing single
 \use_hyperref true
@@ -278,19 +278,742 @@ Część I: Bioserwer a Google
 \end_layout
 
 \begin_layout Section
-Problematyka na styku Google <-> Bioserwer
+Technologie wykorzystane
+\end_layout
+
+\begin_layout Subsection
+Flex 4.0
+\end_layout
+
+\begin_layout Standard
+Stworzony przez 
+\emph on
+Adobe System: Adobe Flex
+\emph default
+ to zestaw technologii bazujących na 
+\emph on
+Adobe Flash, 
+\emph default
+które służą do tworzenia multiplatformowych programów typu 
+\emph on
+RIA (Rich Internet Application).
+ 
+\emph default
+Termin 
+\emph on
+RIA
+\emph default
+ odnosi się do aplikacji internetowej który pobiera większość potrzebnych
+ danych w momencie rozpoczęcia działania, a w trakcie pracy składa jedynie
+ żądania o dane uzupełniające (w przeciwieństwie do czystych aplikacji 
+\emph on
+HTML
+\emph default
+, pobierających cały zestaw danych przy każdym żądaniu).
+ 
+\end_layout
+
+\begin_layout Standard
+Kod źródłowy aplikacji 
+\emph on
+Flex 
+\emph default
+(
+\emph on
+MXML
+\emph default
+, 
+\emph on
+ActionScript
+\emph default
+ i 
+\emph on
+CSS
+\emph default
+) jest kompilowany do postaci pliku bitowego 
+\emph on
+Flash 
+\emph default
+(plik 
+\emph on
+SWF
+\emph default
+), który jest odpalany po stronie klienta przez 
+\emph on
+ActionScript Virtual Machine 
+\emph default
+znajdującej się w oprogramowaniu 
+\emph on
+Flash Player
+\emph default
+ lub 
+\emph on
+Adobe AIR
+\emph default
+.
+ W trakcie połączenia z bazami danych i innymi systemami, 
+\emph on
+Flex 
+\emph default
+stosuje różne sieciowe interfejsy, od 
+\emph on
+XML
+\emph default
+, 
+\emph on
+JSON
+\emph default
+ i 
+\emph on
+SOAP 
+\emph default
+przez
+\emph on
+ Action Message Format (AMF), 
+\emph default
+aż po 
+\emph on
+Real Time Messaging Protocol
+\emph default
+ (
+\emph on
+RTMP
+\emph default
+).
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "SSG2010"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Graficzna część aplikacji 
+\emph on
+Flex
+\emph default
+ jest tworzona w języku 
+\emph on
+MXML
+\emph default
+.
+ Język ten został stworzony w 2004 roku przez firmę 
+\emph on
+Macromedia
+\emph default
+, która obecnie jest częścią 
+\emph on
+Adobe Systems
+\emph default
+.
+ 
+\emph on
+MXML
+\emph default
+ oparty jest na językiem opartym na 
+\emph on
+XML, 
+\emph default
+przez co jest łatwo modyfikowalny.
+ Oprócz możliwości podania położenia, język ten pozwala również określać
+ zachowania elementów strony na zdarzenia, wyjątki i zmiany stanów aplikacji.
+ Przykład kodu napisanego w 
+\emph on
+MXML
+\emph default
+ w Algorytmie 2.1
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "Kod/flex_example.txt"
+lstparams "language=XML"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Przykład kodu 
+\emph on
+MXML
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Kolejnym językiem używanym przez 
+\emph on
+Flex
+\emph default
+ jest 
+\emph on
+Action Script
+\emph default
+.
+ 
+\emph on
+Action Script
+\emph default
+ również został stworzony przez firmę 
+\emph on
+Macromedia
+\emph default
+, na podstawie tzw.
+ 
+\emph on
+ECMAScript
+\emph default
+ standard języka skryptowego z którego wywodzi się między innymi 
+\emph on
+Javascript
+\emph default
+.
+ Oznacza to, że 
+\emph on
+Action Script
+\emph default
+ ma składnię i semantykę podobną właśnie do 
+\emph on
+Javascriptu
+\emph default
+ oraz jest w pełni obiektowym językiem oprogramowania.
+ Algorytm 2.2 przedstawia przykład kodu źródłowego 
+\emph on
+Action Script 
+\emph default
+w wersji 3.0 użytej w aplikacji:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "Kod/action_script_example.txt"
+lstparams "language=Java"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Przykład kodu Action Script
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ponieważ środowisko uruchomieniowe (
+\emph on
+Adobe AIR
+\emph default
+ i 
+\emph on
+Flash Player
+\emph default
+) programu napisanego we 
+\emph on
+Flex
+\emph default
+ może zostać uruchomione praktycznie w każdym systemie i przeglądarce, to
+ aplikacje napisane w tym języku zyskują na interoperacyjności, co przekłada
+ się na mniejsze koszty utrzymywania kodu źródłowego.
+\end_layout
+
+\begin_layout Subsection
+PHP
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+PHP
+\emph default
+ jest obiektowym i skryptowym językiem programowania, uruchamianym po stronie
+ serwerowej, dzięki czemu umożliwia przeprowadzenie bezpiecznych operacji
+ w Internecie bez potrzeby przesyłania wrażliwych informacji przez sieć.
+ Język powstał z inicjatywy Rasmusa Lerdorfa, a jego skrót rozwijany był
+ jako: 
+\emph on
+Personal Home Page 
+\emph default
+(w domyśle 
+\emph on
+Tools
+\emph default
+), później zdecydowano się na rekursywne rozwinięcei skrótu 
+\emph on
+PHP: Hypertext Preprocessor
+\emph default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Serwer interpretujący język 
+\emph on
+PHP
+\emph default
+ może zostać uruchomiony na prawie każdym systemie operacyjnym (
+\emph on
+Windows, Linux, Mac OS
+\emph default
+), zaś polecenia 
+\emph on
+PHP 
+\emph default
+można użyć zarówno w języku 
+\emph on
+HTML 
+\emph default
+jak i w osobnych plikach.
+ PHP może również być używany jako warstwa pośrednicząca w trakcie:
+\end_layout
+
+\begin_layout Standard
+- połączeń z systemem zarządzania bazą danych
+\end_layout
+
+\begin_layout Standard
+- wczytywania plików XML
+\end_layout
+
+\begin_layout Standard
+- wgrywania plików na serwer
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+W pracy użyto wersji 5.3.15 języka 
+\emph on
+PHP
+\emph default
+.
+\end_layout
+
+\begin_layout Subsection
+XML
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+XML
+\emph default
+ (
+\emph on
+Extensible Markup Language
+\emph default
+) to prosty i bardzo elastyczny sposób formatowania tekstu otrzymany z języka
+\emph on
+ SGML
+\emph default
+.
+ Składa się z zestawu reguł służących do kodowania dokumentów w formie czytelnej
+ dla programów komputerowych.
+ Głównymi założeniami 
+\emph on
+XML
+\emph default
+ jest prostota, uniwersalność i użyteczność.
+ Obecnie odgrywa istotną rolę w procesie wymiany informacji drogą internetową.
+ 
+\end_layout
+
+\begin_layout Subsection
+HTML
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+HTML
+\emph default
+ to język hipertekstowego znakowania (
+\emph on
+Hypertext Markup Language
+\emph default
+), który stanowi ustanowioną przez konsorcjum 
+\emph on
+World Wide Web Consortium
+\emph default
+ (
+\emph on
+W3C
+\emph default
+) specyfikację nakreślającą postać dokumentów prezentowanych w Internecie.
+ Twórcą języka 
+\emph on
+HTML
+\emph default
+ jest Tim Berners-Lee.
+ 
+\emph on
+HTML
+\emph default
+ pozwala publikować w Internecie dokumenty zawierające nagłówki, tekst,
+ tabele, listy, zdjęcia, formularze, pobierać za pośrednictwem „połączeń
+ hipertekstowych” informacje z Internetu, projektować formularze oraz umieszczać
+ w dokumentach arkusze kalkulacyjne, klipy wideo oraz inne aplikacje.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "SOK2002"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Java
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Java
+\emph default
+ jest obiektowym językiem programowania stworzonym w 1995 roku przez 
+\emph on
+Sun Microsystem
+\emph default
+ (w grupie kierowanej przez Jamesa Goslinga).
+ Język ten został przewidziany jako język multiplatformowy.
+ Aplikacja 
+\emph on
+Java 
+\emph default
+jest kompilowana do kodu bajtowego, który następnie może zostać uruchomiony
+ na kazdej 
+\emph on
+Java Virtual Machine 
+\emph default
+(
+\emph on
+JVM
+\emph default
+) zainstalowanej na komputerze użytkownika końcowego.
+ 
+\end_layout
+
+\begin_layout Standard
+Obecenie Java jest rozwijana przez 
+\emph on
+Oracle Corporation
+\end_layout
+
+\begin_layout Subsection
+System Zarządzania Bazą Danych
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+System Zarządzanai Bazą Danych
+\emph default
+ (
+\emph on
+SZBD
+\emph default
+) jest zorganizowanym zbiorem narzędzi umożliwiającym dostęp do baz danych
+ i zarządzanie nimi.
+ Dzięki 
+\emph on
+SZBD
+\emph default
+ dostępne są takie operacje, jak: przechowywanie danych, tworzenie i utrzymywani
+e struktur danych, umożliwienie równoczesnego dostępu wielu użytkownikom,
+ wprowadzanie mechanizmu bezpieczeństwa i prywatności, odzyskiwanie danych
+ i operowanie na przechowywanych danych, wprowadzanie i ładowanie danych,
+ udostępnienie wydajnych mechanizmów indeksowania pozwalających na szybkie
+ znalezienie wybranych danych, zapewnienie spójności różnych rekordów, ochrona
+ przechowywanych danych przed utratą za pomocą kopii bezpieczeństwa i procedur
+ odtwarzania.
+ Zaś sama baza danych to zbiór danych zorganizowanych w pewien logiczny
+ i zestrukturalizowany sposób
+\begin_inset CommandInset citation
+LatexCommand cite
+key "CHA2001"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+W projekcie użyto bazy danych MySQL w wersji 5.5.25.
+\end_layout
+
+\begin_layout Subsection
+Java Script
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Java Script
+\emph default
+ to język skryptowy służący do rozwinięcia funkcjonaności języka 
+\emph on
+HTML
+\emph default
+ o bardziej dynamiczne elementy (prace z plikami, ruch obiektów, video i
+ audio).
+ 
+\emph on
+Java Script
+\emph default
+ powstał jako implmentacja standardów 
+\emph on
+ECMA Script 
+\emph default
+(dostępnych na stronie: http://www.ecmascript.org/).
+ 
+\end_layout
+
+\begin_layout Standard
+Cechą 
+\emph on
+JavaScript
+\emph default
+ jest to, że musi on działać wewnątrz środowiska.
+ Najpopularniejszym środowiskiem jest przeglądarka, jednak istnieją inne
+ możliwości.
+ 
+\emph on
+JavaScript
+\emph default
+ może działać na serwerze, na pulpicie lub wewnątrz tzw.
+ rich media.
+ Obecnie 
+\emph on
+JavaScript
+\emph default
+ pozwala tworzyć: 
+\end_layout
+
+\begin_layout Itemize
+Duże aplikacje sieciowe o bogatych interfejsach (aplikacje działające w
+ środowisku sieciowym, takie jak Gmail).
+ 
+\end_layout
+
+\begin_layout Itemize
+Kod po stronie serwera.
+ Może to być kod przypominający skrypty 
+\emph on
+ASP
+\emph default
+ lub uruchamiany przy użyciu narzędzi takich jak 
+\emph on
+Rhino
+\emph default
+ (silnik 
+\emph on
+JavaScript
+\emph default
+ napisany w 
+\emph on
+Javie
+\emph default
+).
+ 
+\end_layout
+
+\begin_layout Itemize
+Aplikacje rich media (Flash, Flex).
+ Tworzy się je przy użyciu 
+\emph on
+ActionScriptu
+\emph default
+, który jest oparty o 
+\emph on
+ECMAScript
+\emph default
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Skrypty, które automatyzują zadania administracyjne na pulpicie w 
+\emph on
+Windows
+\emph default
+.
+ Wykorzystuje się do tego 
+\emph on
+Windows Scripting Host
+\emph default
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Rozszerzenia i wtyczki dla wielu samodzielnych aplikacji, takich jak 
+\emph on
+Firefox
+\emph default
+, 
+\emph on
+Dreamweaver
+\emph default
+ czy 
+\emph on
+Fiddler
+\emph default
+.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "STE2010"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
-Technologie wykorzystane
+Użyte narzędzia programistyczne
+\end_layout
+
+\begin_layout Standard
+Do wykonania pracy będącej tematem niniejszej pracy skorzystano z szeregu
+ gotowych programów komputerowych używanych w procesie produkcji oprogramowania.
+ Wykorzystano nie tylko zintegrowane środowiska programistyczne, serwery
+ video, ale także narzędzia używane w inżynierii oprogramowania.
 \end_layout
 
 \begin_layout Subsection
 Google Analytics
 \end_layout
 
+\begin_layout Standard
+
+\emph on
+Google Analytics
+\emph default
+ jest internetowym narzędziem udostępnianym przez firmę 
+\emph on
+Google
+\emph default
+, które umożliwia monitorowanie ruchu na stronie internetowej.
+ Oprócz tego 
+\emph on
+GA
+\emph default
+ pozwala monitorować ranking strony w wynikach wyszukiwarki 
+\emph on
+Google, 
+\emph default
+integrować reklamy wyświetlane z usługą 
+\emph on
+AdWords,
+\emph default
+ badać profil użytkowników badanego serwisu (sposób odnalezienia strony,
+ czas wizyty, kraj pochodzenia).
+ 
+\emph on
+Google Analytics 
+\emph default
+zbiera informacje w oparciu o plik 
+\emph on
+JavaScript
+\emph default
+ który należy umieścić w plikach badanej strony internetowej.
+\end_layout
+
+\begin_layout Standard
+Usługa dostępna jest pod adresem http://analytics.google.com/ i jest darmowe
+ dla każdego użytkownika poczty Google.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/google_analytics.png
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Panel główny aplikacji Google Analytics i strony Bioserweru
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
-Przeglądarka Lynx
+Przeglądarka Lynx 2.8.7
 \end_layout
 
 \begin_layout Standard
@@ -305,25 +1028,198 @@ ation) pragnących obserwować jak ich strona jest widziana przez 'crawlery'
 \end_layout
 
 \begin_layout Standard
-\begin_inset Wrap figure
-lines 0
-placement o
-overhang 0in
-width "40col%"
+\begin_inset Float figure
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Graphics
 	filename images/wymagania/lynx.png
-	scale 50
+	width 70text%
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Caption
 
 \begin_layout Plain Layout
 Wygląd głównej strony Wikipedii w przeglądarce Lynx
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Adobe Flash Builder 4.0
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Adobe Flash Builder 4.0
+\emph default
+, znany również jako 
+\emph on
+Adobe Flex Builder
+\emph default
+ w poprzednich wersjach frameworku 
+\emph on
+Flex
+\emph default
+, jest zintegrowanym środowiskiem programistycznym dla aplikacji typu 
+\emph on
+RIA
+\emph default
+ opartych na platformie 
+\emph on
+Flash
+\emph default
+.
+ Flash Builder to w zasadzie nakładka na 
+\emph on
+Eclipse
+\emph default
+’a, który jest bardzo znanym środowiskiem w świecie programistów przede
+ wszystkim 
+\emph on
+Javy
+\emph default
+.
+ 
+\emph on
+Flash Builder
+\emph default
+ wspiera programowanie w trybie kodu jak i wyglądu – 
+\emph on
+WYSIWYG
+\emph default
+ (ang.
+ What you see is what you get, to co widzisz jest tym co dostajesz).
+ Prócz wsparcia dla technik kodowania w języku MXML i Action Script, w podstawow
+ej wersji nie brakuje debuggera, podpowiadania i kolorowania składni.
+ 
+\emph on
+Flash Builder 
+\emph default
+w wersji 4.0 był dostępny za darmo do użytkownia w celach edukacyjnych.
+ Obecnie w wersji 4.7 nie ma takiej możliwości.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/flash_builder.png
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Zrzut ekranu przedstawiający 
+\emph on
+Flash Builder
+\emph default
+ w trybie edycji kodu
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Apache Open Meetings 2.0.0
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Open Meetings
+\emph default
+ jest programem służącym do strumieniowaniu video, współdzieleniu pulpitów,
+ wielosobowej edycji plików i tablic internetowych.
+ Aby osiągnąć swój efekt 
+\emph on
+Open Meetings
+\emph default
+ efektywnie spina wiele mniejszych programów open source - red5 (strumieniowanie
+ video), open laszlo (wygląd aplikacji), baza danych Mysql (przechowywanie
+ danych), FFMPEG (kodowanie plików multimedialnych) i wiele innych.
+ Program może zostać uruchomiony zarówno w wersji desktopowej (dla jednego
+ użytkownika) jak i serwerowej (wielu).
+ Projekt został rozpoczęty w celu stworzenia alternatywy dla płatnego serwera
+ Video firmy 
+\emph on
+Adobe 
+\emph default
+przez Sebastian Wagnera w 2006 roku, aby po paru latach przejść do modelu
+ otwartego i wspieranego przez grupę międzynarodowych programistów.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Open Meetings
+\emph default
+ rozpowszechniany jest na licencji Apache 2.0 i dostępny jest na stronie:
+ http://openmeetings.apache.org/
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename images/open_meetings.png
+	width 60text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Wybór audio w programie 
+\emph on
+Open Meetings
 \end_layout
 
 \end_inset
@@ -341,7 +1237,279 @@ Wygląd głównej strony Wikipedii w przeglądarce Lynx
 \end_layout
 
 \begin_layout Subsection
-FlashBuilder
+Notepad++ 5.9
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Notepad++
+\emph default
+ to rozbudowany edytor tekstowy, służący jako zamiennik dla systemowego
+ notatnika na platformie 
+\emph on
+Windows
+\emph default
+.
+ Program ten jest napisany w 
+\emph on
+C++
+\emph default
+.
+ Ma wiele zalet, którymi zdecydowanie przewyższa systemowy notatnik.
+ Przede wszystkim obsługuje wiele kart w jednym oknie co zdecydowanie ułatwia
+ pracę z wieloma plikami.
+ Dodatkowo koloruje składnie kilkunastu języków skryptowych i programowania.
+ Dzięki obsłudze dodatkowych pluginów program można łatwo dostosować do
+ wymagań programisty każdego języka za pomocą obsługi autouzupełnianie tekstu,
+ wyszukiwania par nawiasów, dzielenia ekranu i innych przydatnych funkcji.
+ Produkt ten jest darmowy.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename images/notepadpp.png
+	width 60text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Okno programu Notepad++
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+WinSCP 4.2.9
+\end_layout
+
+\begin_layout Standard
+Program służący do bezpiecznego przenoszenia danych z systemu 
+\emph on
+Windows
+\emph default
+ przy pomocy 
+\emph on
+SSH
+\emph default
+ (
+\emph on
+Secure Shell
+\emph default
+) na zdalny komputer i odwrotnie.
+ Narzędzie to zawiera graficzny interfejs, wspiera operacje drag and drop,
+ a także obsługuje protokoły 
+\emph on
+SFTP
+\emph default
+ (
+\emph on
+SSH File Transfer Protocol, Safe File Transfer Protocol
+\emph default
+), 
+\emph on
+SCP
+\emph default
+ (
+\emph on
+Secure Copy Protocol
+\emph default
+) i 
+\emph on
+FTP
+\emph default
+ (
+\emph on
+File Transfer Protocol
+\emph default
+).
+ Produkt ten jest darmowy.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename images/winscp.png
+	width 60text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Program WinSCP, połączenie z 
+\emph on
+Bioserwerem
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Git / GitHub 1.1.1
+\end_layout
+
+\begin_layout Standard
+System kontroli wersji stworzony przez Junio Hamano, Linus Torvalds w 2005
+ roku, jako alternatywę do systemu 
+\emph on
+SVN
+\emph default
+ (
+\emph on
+Subversion
+\emph default
+).
+ Projekt powstał głównie z myślą o szybkości działania i pracy w środowisku
+ linuksowym, jednak istnieją także programy dedykowane dla środowiska Windowsowe
+go.
+ W projekcie Bioserwera użyto klienta strony GitHub (https://github.com/)
+ do składowania kodu źródłowego aplikacji.
+ Posiada on przejrzysty interfejs oraz intuicyjną obsługę.
+ Program i repozytorium są dostępne darmowo, pod warunkiem udostępnienia
+ kodów źródłowych innym osobom (istnieje możliwość wykupienia wersji zamkniętej).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename images/git.png
+	width 70text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Wygląd aplikacji GitHub
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+VLC Media Player 2.0.3
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+VLC Media Player 
+\emph default
+(Video Lan Media Player), to odtwarzacz video który oprócz klasycznych możliwośc
+i odtwarzania plików, posiada możliwość odtwarzania strumieni danych rftb,
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename images/vlc-media-player.png
+	width 60text%
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+VLC Player odgrywający plik
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Problematyka na styku Google <-> Bioserwer
 \end_layout
 
 \begin_layout Section

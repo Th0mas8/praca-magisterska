@@ -1,0 +1,13 @@
+private function treeLabel(item:XML):String 
+{
+ var node:XML = XML(item);
+ if( node.localName() == "node" )
+    return node.@nazwa;
+ if( node.localName() == "podstrona" )
+    return node.@id;
+ if( node.localName() == "user" )
+   return item.@login;
+				
+   return "error:unknown name of the node - " 
+       + node.localName().toString();
+}

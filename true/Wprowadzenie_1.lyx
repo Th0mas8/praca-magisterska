@@ -454,8 +454,7 @@ Układ pracy oraz uwagi dotyczące realizacji tematu
 \end_layout
 
 \begin_layout Standard
-W trakcie realizacji pracy zostały wyznaczone nastepujące zadania:[dodatkowe
- rzeczy będą tutaj dochodziły]
+W trakcie realizacji pracy zostały wyznaczone nastepujące zadania:
 \end_layout
 
 \begin_layout Standard
@@ -479,12 +478,6 @@ o (napisania skryptów i wybranie gotowych narzędzi)
 \begin_layout Standard
 -Role w administracji - dodanie możliwości edycji praw dostępu do artykułów
  dla poszczególnych użytkowników w panelu administracyjnym systemu
-\end_layout
-
-\begin_layout Standard
--Przechwytywanie maili i automatyczne tworzenie postów - korzystając z okazji
- że większość powiadomień w grupie odbywa się drogą mailową, stworzono moduł
- automatycznie konwertujący te informacje na post na stronie informacyjnej
 \end_layout
 
 \begin_layout Standard

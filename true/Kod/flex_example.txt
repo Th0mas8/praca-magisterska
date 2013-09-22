@@ -1,0 +1,9 @@
+<s:BorderContainer width="25%" height="100%" borderVisible="true"
+	borderWeight="3" borderStyle="solid">
+ <s:VGroup width="100%">
+  <s:CheckBox id="chkbxPerson" label="Add/Edit Person" />
+  <s:CheckBox id="chkbxPosts" label="Edit Posts" />
+  <s:CheckBox id="chkbxLogos" label="Edit Logos" />
+  <s:CheckBox id="chkbxAdm" label="Administration" />
+ </s:VGroup>
+</s:BorderContainer>
