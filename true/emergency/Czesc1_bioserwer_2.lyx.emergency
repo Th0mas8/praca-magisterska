@@ -1,0 +1,3082 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass scrbook
+\begin_preamble
+% increases link area for cross-references and autoname them
+\AtBeginDocument{\renewcommand{\ref}[1]{\mbox{\autoref{#1}}}}
+\addto\extrasenglish{%
+ \renewcommand*{\equationautorefname}[1]{}
+ \renewcommand{\sectionautorefname}{sec.\negthinspace}
+ \renewcommand{\subsectionautorefname}{sec.\negthinspace}
+ \renewcommand{\subsubsectionautorefname}{sec.\negthinspace}
+ \renewcommand{\figureautorefname}{Fig.\negthinspace}
+ \renewcommand{\tableautorefname}{Tab.\negthinspace}
+}
+
+% in case somebody want to have the label "Equation"
+%\renewcommand{\eqref}[1]{Equation~(\negthinspace\autoref{#1})}
+
+% that links to image floats jumps to the beginning
+% of the float and not to its caption
+\usepackage[figure]{hypcap}
+
+% the pages of the TOC is numbered roman
+% and a pdf-bookmark for the TOC is added
+\let\myTOC\tableofcontents
+\renewcommand\tableofcontents{%
+  \frontmatter
+  \pdfbookmark[1]{\contentsname}{}
+  \myTOC
+  \mainmatter }
+
+% makes caption labels bold
+\setkomafont{captionlabel}{\bfseries}
+\setcapindent{1em}
+
+% enables calculations
+\usepackage{calc}
+
+% fancy page header/footer settings
+\renewcommand{\chaptermark}[1]{\markboth{#1}{#1}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+
+% increases the bottom float placement fraction
+\renewcommand{\bottomfraction}{0.5}
+
+% avoids that floats are placed above its sections
+\let\mySection\section\renewcommand{\section}{\suppressfloats[t]\mySection}
+\end_preamble
+\options intoc,bibliography=totoc,index=totoc,BCOR10mm,captions=tableheading,titlepage,fleqn
+\use_default_options true
+\master thesis.lyx
+\begin_modules
+customHeadersFooters
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman lmodern
+\font_sans lmss
+\font_typewriter lmtt
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize 12
+\spacing single
+\use_hyperref true
+\pdf_title "Your title"
+\pdf_author "Your name"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle false
+\pdf_quoted_options "pdfpagelayout=OneColumn, pdfnewwindow=true, pdfstartview=XYZ, plainpages=false"
+\papersize a4paper
+\use_geometry false
+\use_amsmath 2
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\branch NoChildDocument
+\selected 0
+\filename_suffix 0
+\color #ff0000
+\end_branch
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 2
+\paragraph_separation skip
+\defskip medskip
+\quotes_language english
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Left Header
+\begin_inset Argument
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+chaptername
+\end_layout
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+thechapter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+rightmark
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Enable page headers and add the chapter to the header line.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Right Header
+\begin_inset Argument
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+leftmark
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Left Footer
+\begin_inset Argument
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+thepage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Center Footer
+
+\end_layout
+
+\begin_layout Right Footer
+\begin_inset Argument
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+thepage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Wymagania i narzędzia projektowe
+\end_layout
+
+\begin_layout Section
+Technologie wykorzystane
+\end_layout
+
+\begin_layout Subsection
+Flex 4.0
+\end_layout
+
+\begin_layout Standard
+Stworzony przez 
+\emph on
+Adobe System: Adobe Flex
+\emph default
+ to zestaw technologii bazujących na 
+\emph on
+Adobe Flash, 
+\emph default
+które służą do tworzenia multiplatformowych programów typu 
+\emph on
+RIA (Rich Internet Application).
+ 
+\emph default
+Termin 
+\emph on
+RIA
+\emph default
+ odnosi się do aplikacji internetowej która pobiera większość potrzebnych
+ danych w momencie rozpoczęcia działania, a w trakcie pracy składa jedynie
+ żądania o dane uzupełniające (w przeciwieństwie do czystych aplikacji 
+\emph on
+HTML
+\emph default
+, pobierających cały zestaw danych przy każdym żądaniu).
+ 
+\end_layout
+
+\begin_layout Standard
+Kod źródłowy aplikacji 
+\emph on
+Flex 
+\emph default
+(
+\emph on
+MXML
+\emph default
+, 
+\emph on
+ActionScript
+\emph default
+ i 
+\emph on
+CSS
+\emph default
+) jest kompilowany do postaci pliku bitowego 
+\emph on
+Flash 
+\emph default
+(plik 
+\emph on
+SWF
+\emph default
+), który jest odpalany po stronie klienta przez 
+\emph on
+ActionScript Virtual Machine 
+\emph default
+znajdującej się w oprogramowaniu 
+\emph on
+Flash Player
+\emph default
+ lub 
+\emph on
+Adobe AIR
+\emph default
+.
+ W trakcie połączenia z bazami danych i innymi systemami, 
+\emph on
+Flex 
+\emph default
+stosuje różne sieciowe interfejsy, od 
+\emph on
+XML
+\emph default
+, 
+\emph on
+JSON
+\emph default
+ i 
+\emph on
+SOAP 
+\emph default
+przez
+\emph on
+ Action Message Format (AMF), 
+\emph default
+aż po 
+\emph on
+Real Time Messaging Protocol
+\emph default
+ (
+\emph on
+RTMP
+\emph default
+).
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "SSG2010"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Graficzna część aplikacji 
+\emph on
+Flex
+\emph default
+ jest tworzona w języku 
+\emph on
+MXML
+\emph default
+.
+ Język ten został stworzony w 2004 roku przez firmę 
+\emph on
+Macromedia
+\emph default
+, która obecnie jest częścią 
+\emph on
+Adobe Systems
+\emph default
+.
+ 
+\emph on
+MXML
+\emph default
+ oparty jest na językiem opartym na 
+\emph on
+XML, 
+\emph default
+przez co jest łatwo modyfikowalny.
+ Oprócz możliwości podania położenia, język ten pozwala również określać
+ zachowania elementów strony na zdarzenia, wyjątki i zmiany stanów aplikacji.
+ Przykład kodu napisanego w 
+\emph on
+MXML
+\emph default
+ w Algorytmie 2.1
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "Kod/flex_example.txt"
+lstparams "language=XML"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Przykład kodu 
+\emph on
+MXML
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Kolejnym językiem używanym przez 
+\emph on
+Flex
+\emph default
+ jest 
+\emph on
+Action Script
+\emph default
+.
+ 
+\emph on
+Action Script
+\emph default
+ również został stworzony przez firmę 
+\emph on
+Macromedia
+\emph default
+, na podstawie tzw.
+ 
+\emph on
+ECMAScript
+\emph default
+ standardu języka skryptowego z którego wywodzi się między innymi 
+\emph on
+Javascript
+\emph default
+.
+ Oznacza to, że 
+\emph on
+Action Script
+\emph default
+ ma składnię i semantykę podobną właśnie do 
+\emph on
+Javascriptu
+\emph default
+ oraz jest w pełni obiektowym językiem oprogramowania.
+ Algorytm 2.2 przedstawia przykład kodu źródłowego 
+\emph on
+Action Script 
+\emph default
+w wersji 3.0 użytej w aplikacji:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "Kod/action_script_example.txt"
+lstparams "language=Java"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Przykład kodu Action Script
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ponieważ środowisko uruchomieniowe (
+\emph on
+Adobe AIR
+\emph default
+ i 
+\emph on
+Flash Player
+\emph default
+) programu napisanego we 
+\emph on
+Flex
+\emph default
+ może zostać uruchomione praktycznie w każdym systemie i przeglądarce, to
+ aplikacje napisane w tym języku zyskują na interoperacyjności, co przekłada
+ się na mniejsze koszty utrzymywania kodu źródłowego.
+\end_layout
+
+\begin_layout Subsection
+PHP
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+PHP
+\emph default
+ jest obiektowym i skryptowym językiem programowania, uruchamianym po stronie
+ serwerowej, dzięki czemu umożliwia przeprowadzenie bezpiecznych operacji
+ w Internecie bez potrzeby przesyłania wrażliwych informacji przez sieć.
+ Język powstał z inicjatywy Rasmusa Lerdorfa, a jego skrót rozwijany był
+ jako: 
+\emph on
+Personal Home Page 
+\emph default
+(w domyśle 
+\emph on
+Tools
+\emph default
+), później zdecydowano się na rekursywne rozwinięcie skrótu 
+\emph on
+PHP: Hypertext Preprocessor
+\emph default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Serwer interpretujący język 
+\emph on
+PHP
+\emph default
+ może zostać uruchomiony na prawie każdym systemie operacyjnym (
+\emph on
+Windows, Linux, Mac OS
+\emph default
+), zaś polecenia 
+\emph on
+PHP 
+\emph default
+można użyć zarówno w języku 
+\emph on
+HTML 
+\emph default
+jak i w osobnych plikach.
+ 
+\emph on
+PHP
+\emph default
+ może również być używany jako warstwa pośrednicząca w trakcie:
+\end_layout
+
+\begin_layout Standard
+- połączeń z systemem zarządzania bazą danych
+\end_layout
+
+\begin_layout Standard
+- wczytywania plików 
+\emph on
+XML
+\end_layout
+
+\begin_layout Standard
+- wgrywania plików na serwer
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+W pracy użyto wersji 5.3.15 języka 
+\emph on
+PHP
+\emph default
+.
+\end_layout
+
+\begin_layout Subsection
+XML
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+XML
+\emph default
+ (
+\emph on
+Extensible Markup Language
+\emph default
+) to prosty i bardzo elastyczny sposób formatowania tekstu otrzymany z języka
+\emph on
+ SGML
+\emph default
+.
+ Składa się z zestawu reguł służących do kodowania dokumentów w formie czytelnej
+ dla programów komputerowych.
+ Głównymi założeniami 
+\emph on
+XML
+\emph default
+ jest prostota, uniwersalność i użyteczność.
+ Obecnie odgrywa istotną rolę w procesie wymiany informacji drogą internetową.
+ 
+\end_layout
+
+\begin_layout Subsection
+HTML
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+HTML
+\emph default
+ to język hipertekstowego znakowania (
+\emph on
+Hypertext Markup Language
+\emph default
+), który stanowi ustanowioną przez konsorcjum 
+\emph on
+World Wide Web Consortium
+\emph default
+ (
+\emph on
+W3C
+\emph default
+) specyfikację nakreślającą postać dokumentów prezentowanych w Internecie.
+ Twórcą języka 
+\emph on
+HTML
+\emph default
+ jest Tim Berners-Lee.
+ 
+\emph on
+HTML
+\emph default
+ pozwala publikować w Internecie dokumenty zawierające nagłówki, tekst,
+ tabele, listy, zdjęcia, formularze, pobierać za pośrednictwem „połączeń
+ hipertekstowych” informacje z Internetu, projektować formularze oraz umieszczać
+ w dokumentach arkusze kalkulacyjne, klipy wideo oraz inne aplikacje.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "SOK2002"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Java
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Java
+\emph default
+ jest obiektowym językiem programowania stworzonym w 1995 roku przez 
+\emph on
+Sun Microsystem
+\emph default
+ (w grupie kierowanej przez Jamesa Goslinga).
+ Język ten został przewidziany jako język multiplatformowy.
+ Aplikacja 
+\emph on
+Java 
+\emph default
+jest kompilowana do kodu bajtowego, który następnie może zostać uruchomiony
+ na kazdej 
+\emph on
+Java Virtual Machine 
+\emph default
+(
+\emph on
+JVM
+\emph default
+) zainstalowanej na komputerze użytkownika końcowego.
+ 
+\end_layout
+
+\begin_layout Standard
+Obecenie Java jest rozwijana przez 
+\emph on
+Oracle Corporation
+\end_layout
+
+\begin_layout Subsection
+Java Script
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Java Script
+\emph default
+ to język skryptowy służący do rozwinięcia funkcjonaności języka 
+\emph on
+HTML
+\emph default
+ o bardziej dynamiczne elementy (prace z plikami, ruch obiektów, video i
+ audio).
+ 
+\emph on
+Java Script
+\emph default
+ powstał jako implmentacja standardów 
+\emph on
+ECMA Script 
+\emph default
+(dostępnych na stronie: http://www.ecmascript.org/).
+ 
+\end_layout
+
+\begin_layout Standard
+Cechą 
+\emph on
+JavaScript
+\emph default
+ jest to, że musi on działać wewnątrz środowiska.
+ Najpopularniejszym środowiskiem jest przeglądarka, jednak istnieją inne
+ możliwości.
+ 
+\emph on
+JavaScript
+\emph default
+ może działać na serwerze, na pulpicie lub wewnątrz tzw.
+ 
+\emph on
+rich media
+\emph default
+.
+ Obecnie 
+\emph on
+JavaScript
+\emph default
+ pozwala tworzyć: 
+\end_layout
+
+\begin_layout Itemize
+Duże aplikacje sieciowe o bogatych interfejsach (aplikacje działające w
+ środowisku sieciowym, takie jak Gmail).
+ 
+\end_layout
+
+\begin_layout Itemize
+Kod po stronie serwera.
+ Może to być kod przypominający skrypty 
+\emph on
+ASP
+\emph default
+ lub uruchamiany przy użyciu narzędzi takich jak 
+\emph on
+Rhino
+\emph default
+ (silnik 
+\emph on
+JavaScript
+\emph default
+ napisany w 
+\emph on
+Javie
+\emph default
+).
+ 
+\end_layout
+
+\begin_layout Itemize
+Aplikacje rich media (
+\emph on
+Flash
+\emph default
+, 
+\emph on
+Flex
+\emph default
+).
+ Tworzy się je przy użyciu 
+\emph on
+ActionScriptu
+\emph default
+, który jest oparty o 
+\emph on
+ECMAScript
+\emph default
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Skrypty, które automatyzują zadania administracyjne na pulpicie w 
+\emph on
+Windows
+\emph default
+.
+ Wykorzystuje się do tego 
+\emph on
+Windows Scripting Host
+\emph default
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Rozszerzenia i wtyczki dla wielu samodzielnych aplikacji, takich jak 
+\emph on
+Firefox
+\emph default
+, 
+\emph on
+Dreamweaver
+\emph default
+ czy 
+\emph on
+Fiddler
+\emph default
+.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "STE2010"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+System Zarządzania Bazą Danych
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+System Zarządzanai Bazą Danych
+\emph default
+ (
+\emph on
+SZBD
+\emph default
+) jest zorganizowanym zbiorem narzędzi umożliwiającym dostęp do baz danych
+ i zarządzanie nimi.
+ Dzięki 
+\emph on
+SZBD
+\emph default
+ dostępne są takie operacje, jak: przechowywanie danych, tworzenie i utrzymywani
+e struktur danych, umożliwienie równoczesnego dostępu wielu użytkownikom,
+ wprowadzanie mechanizmu bezpieczeństwa i prywatności, odzyskiwanie danych
+ i operowanie na przechowywanych danych, wprowadzanie i ładowanie danych,
+ udostępnienie wydajnych mechanizmów indeksowania pozwalających na szybkie
+ znalezienie wybranych danych, zapewnienie spójności różnych rekordów, ochrona
+ przechowywanych danych przed utratą za pomocą kopii bezpieczeństwa i procedur
+ odtwarzania.
+ Zaś sama baza danych to zbiór danych zorganizowanych w pewien logiczny
+ i zestrukturalizowany sposób
+\begin_inset CommandInset citation
+LatexCommand cite
+key "CHA2001"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+W projekcie użyto bazy danych MySQL w wersji 5.5.25.
+\end_layout
+
+\begin_layout Section
+Użyte narzędzia programistyczne
+\end_layout
+
+\begin_layout Standard
+Do wykonania pracy będącej tematem niniejszej pracy skorzystano z szeregu
+ gotowych programów komputerowych używanych w procesie produkcji oprogramowania.
+ Wykorzystano nie tylko zintegrowane środowiska programistyczne, serwery
+ video, ale także narzędzia używane w inżynierii oprogramowania.
+\end_layout
+
+\begin_layout Subsection
+Google Analytics
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Google Analytics
+\emph default
+ jest internetowym narzędziem udostępnianym przez firmę 
+\emph on
+Google
+\emph default
+, które umożliwia monitorowanie ruchu na stronie internetowej.
+ Oprócz tego 
+\emph on
+GA
+\emph default
+ pozwala monitorować ranking strony w wynikach wyszukiwarki 
+\emph on
+Google, 
+\emph default
+integrować reklamy wyświetlane z usługą 
+\emph on
+AdWords,
+\emph default
+ badać profil użytkowników badanego serwisu (sposób odnalezienia strony,
+ czas wizyty, kraj pochodzenia).
+ 
+\emph on
+Google Analytics 
+\emph default
+zbiera informacje w oparciu o plik 
+\emph on
+JavaScript
+\emph default
+ który należy umieścić w plikach badanej strony internetowej.
+\end_layout
+
+\begin_layout Standard
+Usługa dostępna jest pod adresem 
+\bar under
+http://analytics.google.com/
+\bar default
+ i jest darmowe dla każdego użytkownika poczty Google.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename images/google_analytics.png
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Panel główny aplikacji Google Analytics i strony Bioserweru
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Przeglądarka Lynx 2.8.7
+\end_layout
+
+\begin_layout Standard
+Przeglądarka 
+\emph on
+Lynx
+\emph default
+ (ang.
+ Ryś) jest przeglądarką tekstową, której pierwsza wersja została stworzona
+ w 1992 roku.
+ Wyświetla ona stronę jedynie w wersji tekstowej - bez obrazków, elementów
+ generowanych za pomocą Java Scriptu lub Adobe Flash.
+ Dzięki temu jest wykorzystywana zarówno przez osoby niewidome do odczytywania
+ treści dowolnej strony jak i przez specjalistów od 
+\emph on
+SEO
+\emph default
+ (
+\emph on
+Search Engine Optimalization
+\emph default
+) pragnących obserwować jak ich strona jest widziana przez 
+\emph on
+crawlery Google
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename images/wymagania/lynx.png
+	width 70text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Wygląd głównej strony Wikipedii w przeglądarce Lynx
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Adobe Flash Builder 4.0
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Adobe Flash Builder 4.0
+\emph default
+, znany również jako 
+\emph on
+Adobe Flex Builder
+\emph default
+ w poprzednich wersjach frameworku 
+\emph on
+Flex
+\emph default
+, jest zintegrowanym środowiskiem programistycznym dla aplikacji typu 
+\emph on
+RIA
+\emph default
+ opartych na platformie 
+\emph on
+Flash
+\emph default
+.
+ Flash Builder to w zasadzie nakładka na 
+\emph on
+Eclipse
+\emph default
+’a, który jest bardzo znanym środowiskiem w świecie programistów przede
+ wszystkim 
+\emph on
+Javy
+\emph default
+.
+ 
+\emph on
+Flash Builder
+\emph default
+ wspiera programowanie w trybie kodu jak i wyglądu – 
+\emph on
+WYSIWYG
+\emph default
+ (ang.
+ 
+\emph on
+What you see is what you get
+\emph default
+, to co widzisz jest tym co dostajesz).
+ Prócz wsparcia dla technik kodowania w języku MXML i Action Script, w podstawow
+ej wersji nie brakuje debuggera, podpowiadania i kolorowania składni.
+ 
+\emph on
+Flash Builder 
+\emph default
+w wersji 4.0 był dostępny za darmo do użytkownia w celach edukacyjnych.
+ Obecnie w wersji 4.7 nie ma takiej możliwości.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename images/flash_builder.png
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Zrzut ekranu przedstawiający 
+\emph on
+Flash Builder
+\emph default
+ w trybie edycji kodu
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Apache Open Meetings 2.0.0
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Open Meetings
+\emph default
+ jest programem służącym do strumieniowaniu video, współdzieleniu pulpitów,
+ wielosobowej edycji plików i tablic internetowych.
+ Aby osiągnąć swój efekt 
+\emph on
+Open Meetings
+\emph default
+ efektywnie spina wiele mniejszych programów open source - 
+\emph on
+red5
+\emph default
+ (strumieniowanie video),
+\emph on
+ open laszlo
+\emph default
+ (wygląd aplikacji), baza danych 
+\emph on
+Mysql
+\emph default
+ (przechowywanie danych), 
+\emph on
+FFMPEG
+\emph default
+ (kodowanie plików multimedialnych) i wiele innych.
+ Program może zostać uruchomiony zarówno w wersji desktopowej (dla jednego
+ użytkownika) jak i serwerowej (wielu).
+ Projekt został rozpoczęty w celu stworzenia alternatywy dla płatnego serwera
+ Video firmy 
+\emph on
+Adobe 
+\emph default
+przez Sebastian Wagnera w 2006 roku, aby po paru latach przejść do modelu
+ otwartego i wspieranego przez grupę międzynarodowych programistów.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Open Meetings
+\emph default
+ rozpowszechniany jest na licencji 
+\emph on
+Apache 2.0
+\emph default
+ i dostępny jest na stronie: 
+\bar under
+http://openmeetings.apache.org/
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename images/open_meetings.png
+	width 60text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Wybór rozdzielczości kamery w programie 
+\emph on
+Open Meetings
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Notepad++ 5.9
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Notepad++
+\emph default
+ to rozbudowany edytor tekstowy, służący jako zamiennik dla systemowego
+ notatnika na platformie 
+\emph on
+Windows
+\emph default
+.
+ Program ten jest napisany w 
+\emph on
+C++
+\emph default
+.
+ Ma wiele zalet, którymi zdecydowanie przewyższa systemowy notatnik.
+ Przede wszystkim obsługuje wiele kart w jednym oknie co zdecydowanie ułatwia
+ pracę z wieloma plikami.
+ Dodatkowo koloruje składnie kilkunastu języków skryptowych i programowania.
+ Dzięki obsłudze dodatkowych pluginów program można łatwo dostosować do
+ wymagań programisty każdego języka za pomocą obsługi autouzupełnianie tekstu,
+ wyszukiwania par nawiasów, dzielenia ekranu i innych przydatnych funkcji.
+ Produkt ten jest darmowy.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename images/notepadpp.png
+	width 60text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Okno programu 
+\emph on
+Notepad++
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+WinSCP 4.2.9
+\end_layout
+
+\begin_layout Standard
+Program służący do bezpiecznego przenoszenia danych z systemu 
+\emph on
+Windows
+\emph default
+ przy pomocy 
+\emph on
+SSH
+\emph default
+ (
+\emph on
+Secure Shell
+\emph default
+) na zdalny komputer i odwrotnie.
+ Narzędzie to zawiera graficzny interfejs, wspiera operacje drag and drop,
+ a także obsługuje protokoły 
+\emph on
+SFTP
+\emph default
+ (
+\emph on
+SSH File Transfer Protocol, Safe File Transfer Protocol
+\emph default
+), 
+\emph on
+SCP
+\emph default
+ (
+\emph on
+Secure Copy Protocol
+\emph default
+) i 
+\emph on
+FTP
+\emph default
+ (
+\emph on
+File Transfer Protocol
+\emph default
+).
+ Produkt ten jest darmowy.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename images/winscp.png
+	width 60text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Program WinSCP, połączenie z 
+\emph on
+Bioserwerem
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Git / GitHub 1.1.1
+\end_layout
+
+\begin_layout Standard
+System kontroli wersji stworzony przez Junio Hamano, Linus Torvalds w 2005
+ roku, jako alternatywę do systemu 
+\emph on
+SVN
+\emph default
+ (
+\emph on
+Subversion
+\emph default
+).
+ Projekt powstał głównie z myślą o szybkości działania i pracy w środowisku
+ linuksowym, jednak istnieją także programy dedykowane dla środowiska 
+\emph on
+Windows
+\emph default
+.
+ W projekcie 
+\emph on
+Bioserwera
+\emph default
+ użyto klienta strony 
+\emph on
+GitHub
+\emph default
+ (
+\bar under
+https://github.com/
+\bar default
+) do składowania kodu źródłowego aplikacji.
+ Posiada on przejrzysty interfejs oraz intuicyjną obsługę.
+ Program i repozytorium są dostępne darmowo, pod warunkiem udostępnienia
+ kodów źródłowych innym osobom (istnieje możliwość wykupienia wersji zamkniętej).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename images/git.png
+	width 70text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Wygląd aplikacji 
+\emph on
+GitHub
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+VLC Media Player 2.0.3
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+VLC Media Player 
+\emph default
+(
+\emph on
+Video Lan Media Player
+\emph default
+), to odtwarzacz video który oprócz klasycznych możliwości odtwarzania plików,
+ posiada możliwość odtwarzania strumieni danych 
+\emph on
+RTMB
+\emph default
+, 
+\emph on
+TS
+\emph default
+ (
+\emph on
+Transport Stream
+\emph default
+ - standard przesyłu danych telewizji cyfrowej w 
+\emph on
+MPEG
+\emph default
+) oraz danych przechwytywanych przez dedykowane urządzenia zewnętrzne (tunery
+ telewizji satelitarnej i naziemnej).
+ Dzięki tak szerokiej funkcjonalności 
+\emph on
+VLC
+\emph default
+ jest idealnym progamem do badania jakości połączenia i jego parametrów.
+ Oryginalnie projekt został stworzony jako 
+\emph on
+Video LAN Client
+\emph default
+ w roku 1996 przez grupę francuskich studentów, jednak obecnie odtwarzacz
+ jest rozwijany przez międzynarodową grupę:
+\emph on
+ VideoLAN Project
+\emph default
+.
+ 
+\emph on
+VLC
+\emph default
+ jest dostępny na licencji 
+\emph on
+LGPL (Lesser GNU Public Licence)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename images/vlc-media-player.png
+	width 60text%
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+VLC Player odgrywający plik
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+SWFAddress 2.4
+\end_layout
+
+\begin_layout Standard
+SWFAddress jest darmową grupą skryptów stworzoną w języku 
+\emph on
+JavaScript
+\emph default
+ przez bułgrarską grupę programistyczną 
+\emph on
+Asual
+\emph default
+.
+ Skrypty te pozwalą na manipulację adresem i historią przeglądarki, używaniem
+ wyszukiwarek do przeszukiwania treści strony do której są podłączone, a
+ także tworzeniem zakładek stron w serwisach społecznościowych.
+ Są one dostępne pod adresem: 
+\bar under
+http://www.asual.com/swfaddress/
+\end_layout
+
+\begin_layout Section
+Opis istniejącego systemu
+\end_layout
+
+\begin_layout Standard
+Istniejąca strona Bioserwera, dostępna była pod adresem 
+\bar under
+http://bio.cs.put.poznan.pl/
+\bar default
+ (z powodu restrukturyzacji strony internetowej została zmieniona w lipcu
+ 2013 roku, obecnie jej kopia znajduje się pod adresem: XXXXX), została
+ stworzona w 2011 roku w ramach pracy inżynierskiej przez Michała Jackowskiego,
+ Szymona Szałatę, Marka Szewczyka i Tomasza Tokarka pod nadzorem prof.
+ Jacka Błażewicza i pani dr Marty Szachniuk.
+ Strona główna Bioserwera jest zaprezentowana na rysunku 2.10.
+ Została ona napisana w języku 
+\emph on
+Adobe Flex
+\emph default
+, który komunikuje się Bazą Danych (
+\emph on
+MySQL
+\emph default
+) przy pomocy skryptów 
+\emph on
+PHP
+\emph default
+ (patrz rysunek 2.9).
+\end_layout
+
+\begin_layout Standard
+Pod względem treści system można podzielić na trzy części:
+\end_layout
+
+\begin_layout Itemize
+Strony dostępnej dla użytkownika końcowego
+\end_layout
+
+\begin_layout Itemize
+System Zarządzania Treścią (SZT)
+\end_layout
+
+\begin_layout Itemize
+Baza Danych (do jej przechowywania) 
+\end_layout
+
+\begin_layout Standard
+W trakcie edycji, na każdej stronie - zwanej dalej też artykułem, można
+ umieścić dowolną ilość elementów.
+ Elementem może być tekst, tabela, galeria zdjęć lub video.
+ Artykuły ułożone są w strukturze drzewiastej, zaś każdy artykuł może posiadać
+ 
+\emph on
+potomków
+\emph default
+, będąc wtedy 
+\emph on
+rodzicem
+\emph default
+.
+ Treść artykułów można edytować z poziomu 
+\emph on
+SZT
+\emph default
+ napisanego na potrzeby pracy inżynierskiej (zwykle dostępnego jako podstrona
+ 
+\emph on
+admin
+\emph default
+: 
+\bar under
+http://[STRONA_BIOSERWERA]/admin/
+\bar default
+).
+ Dostęp do 
+\emph on
+SZT
+\emph default
+ jest chroniony loginem i hasłem, zaś hasło jest przechowywane na serwerze
+ w formie zaszyfrowanej (
+\emph on
+SHA-1
+\emph default
+).
+ 
+\end_layout
+
+\begin_layout Standard
+Największym problemem, który został nierozwiązany w oryginalnej implementacji
+ jest brak podziału ról w administracji systemu oraz brak kopii zapasowej
+ strony dla użytkowników nie posiadających wtyczki 
+\emph on
+Adobe Player
+\emph default
+ (w tym automatycznych botów indeksujących strony).
+ Niniejsza praca magisterska opisuje sposób implementacji rozwiązań dla
+ obu problemów.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 0
+placement o
+overhang 0col%
+width "50col%"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename images/diagramy/architektura_strony.png
+	width 40text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Architektura Bioserwera
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename images/bioserwer.png
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Wygląd strony Bioserwera z rozwiniętym menu
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Specyfikacja Wymagań
+\end_layout
+
+\begin_layout Standard
+Wymagania funkcjonalne opisują dla programisty zakres pracy jaka musi zostać
+ wykonana nad projektem, by mógł on zostać uznany przez klienta za spełniający
+ oczekiwania.
+ Wymagania zostały podzielone na funkcjonalne (przedstawione w postaci przypadkó
+w użycia w punkcie 2.4.1) i pozafunkcjonalne (patrz punkt 2.4.2).
+ System posiada trzech aktorów używających systemu, są oni przedstawieni
+ na rysunku 2.11.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 0
+placement o
+overhang 0col%
+width "50col%"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename images/diagramy/uzytkownicy.jpg
+	width 35text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Aktorzy systemu
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Przypadki użycia
+\end_layout
+
+\begin_layout Standard
+{dodanie/edycja moderatora - specyfikacja rol}
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+ID:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+UC1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Nazwa:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Zarządzanie rolami
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Główny aktor:
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="left" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Administrator
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Opis: 
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Administrator zarządza moderatorami w systemie 
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0">
+<column alignment="left" valignment="top" width="0">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="left" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="left" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+{ustawienie parametrow live connection, ustawienie parametrow archiwalnego
+ polaczenia; po stronie uzytkownika - ogladane, fullscreen, zmiana miejsca
+ kamery, archiwalia; ;specyfikacja systemu teleseminariów}
+\end_layout
+
+\begin_layout Subsection
+Wymagania Pozafunkcjonalne
+\end_layout
+
+\begin_layout Standard
+W celu zapewnienia komfortowej pracy z aplikacją powstał szereg wymagań
+ pozafunkcjonalnych:
+\end_layout
+
+\begin_layout Itemize
+Funkcjonalność (ang.
+ 
+\emph on
+functionality
+\emph default
+) System powinien zapewnić chroniony dostęp do edytowania danych;
+\end_layout
+
+\begin_layout Itemize
+Niezawodność (ang.
+ 
+\emph on
+reliability
+\emph default
+) System powinien udostępnić łatwe tworzenie kopii zapasowej danych; 
+\end_layout
+
+\begin_layout Itemize
+Użyteczność(ang.
+ 
+\emph on
+usability
+\emph default
+) Edytory programu powinny być przejrzyste i łatwe w obsłudze;
+\end_layout
+
+\begin_layout Itemize
+Przenośność (ang.
+ 
+\emph on
+portability
+\emph default
+) Możliwość uruchomienia strony na każdym systemie operacyjnym;
+\end_layout
+
+\begin_layout Section
+Baza danych
+\end_layout
+
+\begin_layout Standard
+{istniejaca baza danych, na czerwono dodatkowe rzeczy dodane do bazy danych
+ przeze mnie}
+\end_layout
+
+\begin_layout Chapter
+Część I: Zarządzanie Bioserwerem
+\end_layout
+
+\begin_layout Section
+Problematyka na styku Google <-> Bioserwer
+\end_layout
+
+\begin_layout Standard
+Podstawowym kryterium skuteczności strony internetowej jest zdolność dotarcia
+ z jej treścią do użytkownika końcowego.
+ Informacja nie używana, niedostępna jest informacja martwą.
+ Dlatego wszelkiego rodzaju wyszukiwarki internetowe, w tym największa z
+ nich - wyszukiwarka Google, sprzyjają twórcom storn internetowych w procesie
+ dostarczania zawartości stron dla użytkownika końcowego.
+ Robią to - katalogując strony internetowe za pomocą zautomatyzowanych skryptów
+ zwanych 
+\emph on
+crawlerami
+\emph default
+.
+
+\emph on
+ Crawlery 
+\emph default
+przeglądają zawartość strony zapisanej w języku 
+\emph on
+HTML
+\emph default
+ i katalogują wszelkie linki do stron powiązanych z aktualnie wyświetlaną
+ stroną.
+ Niestety tutaj pojawia się główny problem języka 
+\emph on
+Flex
+\emph default
+ (bazującego na języku skryptowym 
+\emph on
+Adobe Flash
+\emph default
+), ktory został użyty do stworzenia pierwotnej wersji strony dla grupy Bioinform
+atycznej (www.bioserwer.cs.put.poznan.pl).
+ Treść strony stworzonej w języku 
+\emph on
+Flex
+\emph default
+ jest przechowywana w zamkniętym środowisku - interpretowanym przez wtyczkę
+ 
+\emph on
+Flash Adobe Player
+\emph default
+.
+ Z perspektywy strony 
+\emph on
+HTML 
+\emph default
+podstrona napisana we 
+\emph on
+Flexie
+\emph default
+ jest czarną skrzynką (ang.
+ 
+\emph on
+black box
+\emph default
+), której wewnętrzna nawigacja i zawartość są dla niej nieznane.
+\end_layout
+
+\begin_layout Standard
+Dlatego w projekcie należało rozwiązać dwa problemy:
+\end_layout
+
+\begin_layout Itemize
+treść strony we 
+\emph on
+Flexie
+\emph default
+ widoczna również w 
+\emph on
+HTML
+\end_layout
+
+\begin_layout Itemize
+ujednolicenie nawigacji na stronie (
+\emph on
+HTML/Flex
+\emph default
+)
+\end_layout
+
+\begin_layout Standard
+oraz cel funkcjonalny:
+\end_layout
+
+\begin_layout Itemize
+utrzymanie się strony na pierwszej stronie wyników dla hasła 
+\emph on
+bioserver
+\emph default
+ w wyszukiwarce 
+\emph on
+Google
+\emph default
+ (przed rozpoczęciem prac - drugie miejsce)
+\end_layout
+
+\begin_layout Subsection
+Treść strony
+\end_layout
+
+\begin_layout Standard
+Najlepszym sposobem na wyświetlenie strony dla użytkowników (w tym 
+\emph on
+crawler
+\emph default
+ów) nie posiadających wtyczki 
+\emph on
+Adobe Player
+\emph default
+ jest po prostu ściągnięcie jej treści z serwera i wyświetlenie w normalnym
+ 
+\emph on
+HTML
+\emph default
+.
+ 
+\emph on
+Flex
+\emph default
+ jest oparty na architekturze 
+\emph on
+MVC
+\emph default
+ (
+\emph on
+ang.
+ Model-View-Controler
+\emph default
+: Model-Widok-Kontroler) to znaczy że kod źródłowy aplikacji jest podzielony
+ na części które odpowiadają kolejno za: przetwarzanie danych, wyświetlanie
+ danych i pozyskanie danych, zaś sama treść strony jest składowana w zewnętrznej
+ bazie danych (patrz rysunek 3.1).
+ Dlatego wyświetlenie zawartości strony ogranicza się jedynie do nawiązania
+ połączenia z bazą danych i wyświetleniem treści, która jest już składowana
+ w formacie 
+\emph on
+HTML, 
+\emph default
+więc dokonywanie konwersji nie jest wymagane
+\emph on
+.
+
+\emph default
+ Ponieważ jednak - czysty język 
+\emph on
+HTML
+\emph default
+ nie obsługuje połączeń z bazą danych, w projekcie została użyta strona
+ generowana przez skrypt 
+\emph on
+PHP
+\emph default
+.
+ Pobiera on informacje ze skryptu pomocniczego 
+\emph on
+SWFAddress 
+\emph default
+(patrz punkt 3.1.2) o 
+\emph on
+ID
+\emph default
+ aktualnie obserwowanego artykułu, a następnie pobiera treść tego artykułu
+ z serwera.
+ Skrypt działa jedynie wtedy, gdy strona we 
+\emph on
+FLEX
+\emph default
+ nie załaduje się poprawnie - po to by nie dublować obciążenia w trakcie
+ normalnej pracy strony internetowej.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 0
+placement R
+overhang 0in
+width "50col%"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename images/diagramy/HTML - old site.png
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Stara architektura 
+\emph on
+Bioserwera
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Nawigacja
+\end_layout
+
+\begin_layout Standard
+Użytkownik który pragnie szybko dotrzeć do interesujących go treści częśto
+ zapisuje adres podstrony, która go interesuje w przeglądarce.
+ Jednak w przypadku czystego języka 
+\emph on
+FLEX 
+\emph default
+jest to niemożliwe, bo adres strony widziany przez przeglądarke - nie zmienia
+ się.
+ Sytuacja taka nazywa się brakiem 
+\emph on
+Deep Linking
+\emph default
+ (ang.
+ Głębokie Linkowanie).
+ Jest to również problem dla przeglądarki 
+\emph on
+crawlerów
+\emph default
+, które nie są w stanie odpowiednio skategoryzować treści znalezionych stron.
+ Dlatego w projekcie dodano możliwość zmiany adresu strony przy pomocy zewnętrzn
+ej biblioteki 
+\emph on
+SWFAddress
+\emph default
+.
+ Biblioteka ta umożliwia zmianę adresu strony ręcznie z poziomu języka 
+\emph on
+FLEX.
+
+\emph default
+ Przesyła ona również adres w drugą stronę, aby można było przeparsować
+ wymagany adres 
+\emph on
+ID
+\emph default
+ artykułu do wyświetlenia w momencie budowania strony do wyświetlenia.
+ W algorytmie 3.1 widzimy dwa rodzaje adresów używanych przez aplikacje:
+\end_layout
+
+\begin_layout Enumerate
+jest adresem ustawianym w momencie gdy strona pracuje za pomocą aplikacji
+ 
+\emph on
+FLEX - 
+\emph default
+tutaj jedynym ważnym elementem jest przypisanie parametru 
+\emph on
+a
+\emph default
+ czyli 
+\emph on
+ID
+\emph default
+ wyświetlanego elementu
+\end_layout
+
+\begin_layout Enumerate
+ten adres jest ustawiany przez stronę 
+\emph on
+PHP, 
+\emph default
+z racji tego że artykuły na stronie mają strukturę drzewa można wyświetlić
+ całą ścieżkę do artykułu, ma to znaczenie w przypadku katalogowania strony
+ przez wyszukiwarkę 
+\emph on
+Google 
+\emph default
+(patrz punkt 3.1.3)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 0
+placement R
+overhang 0in
+width "50col%"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename images/diagramy/HTML - new site.png
+	width 50text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Nowa architektura
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float algorithm
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset include
+LatexCommand lstinputlisting
+filename "Kod/adres.txt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Formaty adresu internetowego
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+
+\emph on
+Google
+\emph default
+ - 
+\emph on
+PageRank
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+PageRank 
+\emph default
+jest algorytmem używanym przez 
+\emph on
+Google 
+\emph default
+do weryfikacji jakości treści danej strony internetowej.
+ W skrócie: opiera on się na założeniu że strona na którą powołują się inne
+ strony o wysokiej wartości, też jest stroną o wysokiej wartości.
+ Dodatkowo algorytm ten został rozbudowany o wiele dodatkowych, tajnych
+ kryteriów które mają zapobiegać jego nadużywaniu i gwarantować prawidłowość
+ wyniku.
+ Dlatego w trakcie budowania strony dla 
+\emph on
+crawlerów
+\emph default
+ ważne było aby:
+\end_layout
+
+\begin_layout Itemize
+strona miała normalną budowę - menu, treść, stopka.
+ Strony z czystym tekstem jako treścią otrzymują mniejszy wynik
+\end_layout
+
+\begin_layout Itemize
+strona posiadała nawigację opartą na systemie drzewa aby ułatwić katalogowanie
+ zebranych informacji
+\end_layout
+
+\begin_layout Itemize
+linki do treści w stronie wewnętrznej działały prawidłowo
+\end_layout
+
+\begin_layout Standard
+Punkty 3.1.1 i 3.1.2 opisały w jaki sposób strona została przygotowana na przyjęcie
+ automatycznych botów 
+\emph on
+Google.
+ 
+\emph default
+Jednak by ten proces mógł się zakończyć należy jeszcze stornę zarejestrować
+ w usługach 
+\emph on
+Google
+\emph default
+.
+ Służy ku temu narzędzie 
+\emph on
+Google Analytics.
+
+\emph default
+ Po zarejestrowaniu się w serwisie, należy stworzyć nowy profile dla strony
+ która ma być obserwowana, a następnie przekopiować wygenerowany plik 
+\emph on
+JavaScript 
+\emph default
+ze stworzonym unikalnym 
+\emph on
+TrackID
+\emph default
+ na nasz serwer.
+ Od tego momentu administrator serwera może nie tylko obserwować aktualny
+ ranking swojej strony,ale także każda wizyta osoby odwiedzającej serwis
+ zostanie zapisana w systemie 
+\emph on
+Google 
+\emph default
+(czas wizyty, odwiedzone podstrony, kraj pochodzenia osoby wizytującej)
+\emph on
+.
+\end_layout
+
+\begin_layout Standard
+Ostatecznie, zmiana strony spowodowała spadek jedynie o jedno miejsce w
+ rankingu 
+\emph on
+Google
+\emph default
+ dla słowa 
+\begin_inset Quotes eld
+\end_inset
+
+
+\emph on
+Bioserver
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+ (z drugiego na czwarte), co oznacza że wymaganie pozafunkcjonalne zostało
+ osiągnięte.
+ Spadek mógł być spowodowany niedoskonałościami metody: brakiem wyświetlania
+ metadanych o rysunkach wyświetlanych na stronie, nie wyświetlaniem informacji
+ zawartych w tablicach oraz brakiem stopki z linkami do pokrewnych stron.
+ To znaczy że metoda może zostać udoskonalona w przypadku użycia w przyszłych
+ projektach.
+\end_layout
+
+\begin_layout Section
+Administracja serwera - role użytkowników
+\end_layout
+
+\begin_layout Standard
+Bioserwer jest serwerem grupy Bioinformatycznej na Politechnice Poznańskiej,
+ z założenia służy on prezentowaniu przedmiotów badań tej grupy w Internecie.
+ W starej wersji strony możliwość edytowania treści miał jedynie administrator
+ strony, który otrzymywał treść wiadomości od reszty członków grupy.
+ Aby usprawnić ten proces postanowiono dać możliwość edytowania treści wszystkim
+ użytkownikom poprzez System Zarządzania Treścią (SZT).
+ Jednakże by niedopuścić do zmniejszenia bezpieczeństwa na stronie (poprzez
+ utworzenie wielu kont administratorskich), dodano możliwość zakładania
+ ograniczeń na utworzone konta.
+\end_layout
+
+\begin_layout Standard
+Panel administratorski znajduje się na podstronie 
+\emph on
+admin
+\emph default
+ głównej strony (http:// [ADRES_SERWERA] /admin).
+ W nowej wersji użytkownik z prawami administratorskimi zauważy dodatkową
+ zakładkę w której będzie mógł tworzyć konta i przydzielać im prawa do edytowani
+a zawartości.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename images/administration_rights.png
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Wygląd panelu administracyjnego
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Na rysunku 3.3 widać standardowy widok panelu administracyjnego.
+ Jest on podzielony na trzy części, licząc od lewej: 
+\end_layout
+
+\begin_layout Itemize
+pierwsza kolumna odpowiedzialna jest za administracje użytkownikami portalu:
+ zmianę hasła, adresu 
+\emph on
+email
+\emph default
+, oraz loginu, a także dodanie lub usunięcie użytkownika
+\end_layout
+
+\begin_layout Itemize
+druga kolumna odpowiedzalna jest za przyznawanie praw do edycji artykułów
+ w serwisie.
+ Zasada działania tych opcji jest dokładniej opisana w podpunkcie 3.2.1
+\end_layout
+
+\begin_layout Itemize
+trzecia kolumna to prawa administratorskie - możliwość dostępu manipulacji
+ listą osób, postów, linkami stopki, a także powyższej strony administracyjnej
+\end_layout
+
+\begin_layout Subsection
+Drzewo edycji - algorytm działania
+\end_layout
+
+\begin_layout Standard
+Drzewo edycji służy do wyboru które artykuły ma dany użytkownik prawo edytować,
+ a które nie.
+ Domyślnie użytkownik nie może edytować żadnego artykułu, żeby kliknięcie
+ na dany artykuł i przyznanie praw do edycji za pomocą przycisku 
+\emph on
+Grant rights 
+\emph default
+(ang.
+ Przyznaj prawa)
+\emph on
+ 
+\emph default
+daje prawo do edycji w wybranym artykule i we wszystkich jego potomkach.
+ Zaś wybranie przycisku 
+\emph on
+Remove rights
+\emph default
+ (ang.
+ Odbierz prawa) je odbiera.
+ Przycisk 
+\emph on
+Clear rights
+\emph default
+ usuwa prawa zapisane dla danego artykułu.
+ Zapisanie praw dla całego drzewa artykułów, dla każdego z użytkowników
+ osobno byłoby problematyczne z dwóch względów: zajmowałoby więcej miejsca
+ na serwerze i wymagałoby dodatkowych wyliczeń w przypadku edycji drzewa
+ artykułów (np.
+ przesunięcia elementu).
+ Dlatego w projekcie wybrane zostało inne rozwiązanie (algorytm zaprezentowany
+ na rysunku 3.4 i opisany poniżej).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 0
+placement o
+overhang 0col%
+width "50col%"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename images/diagramy/algroytm_praw.png
+	width 60text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Algorytm wyboru praw edycji
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+System zapisuje jedynie prawa dla danego artykułu (zezwolenie lub zakaz
+ edycji), zaś algorytm w przypadku potrzeby określenia prawa dla danego
+ artykułu, wywołuje rekurencyjnie sprawdzenie praw dla rodziców, dopóki
+ nie natrafi na zezwolenie przydzielone przez administratora.
+ W przypadku braku przydzielenia prawa - użytkownik nie ma zezwolenia na
+ edycje artykułu.
+ Na rysunku 3.3 artykuły które można edytować określone są prefixem 
+\emph on
+[YES], 
+\emph default
+a te które nie można 
+\emph on
+[NO]
+\emph default
+.
+ Dzięki zastosowaniu takiego algorytmu na serwerze jest przechowywanych
+ niewiele danych (pojedyńcze linie komend) i nie występuje problem przeliczania
+ praw wszystkich użytkowników w przypadku zmiany pojedyńczego elementu drzewa.
+ Jedynym mankamentem tej metody jest narzut obliczeniowy wymagany w przypadku
+ próby użycia danego artykułu.
+ Jednakże wynosi on 
+\begin_inset Formula $O(m)$
+\end_inset
+
+ dla pojedyńczego elementu i 
+\begin_inset Formula $O(m*n)$
+\end_inset
+
+ dla wyświetlenia całego drzewa.
+ Gdzie
+\end_layout
+
+\begin_layout Itemize
+m - średnie zagłębienie w drzewie - maksymalne zagłębienie w drzewie wynosi
+ obecnie 5 lub 6 - tak więc nie jest to spora wartość
+\end_layout
+
+\begin_layout Itemize
+n - liczba elementów (artykułów) w drzewie - liczba ta wynosi około 100
+\end_layout
+
+\begin_layout Standard
+Ostateczne obciążenie procesora użytkownika końcowego nie jest więc problemem
+ i to rozwiązanie może zostać użyte celem stworzenia szybkiej selektora
+ praw edycji.
+\end_layout
+
+\begin_layout Section
+Edytor stopki
+\end_layout
+
+\begin_layout Standard
+Strona nie powinna być przebudowywana z kodu źródłowego przy każdej zmianie,
+ dlatego w trakcie pracy magisterskiej skorygowano błąd przeniesiony z poprzedni
+ej wersji - brak możliwości edycji wyświetlanych logo w stopce strony.
+ Teraz w menu administracyjnym znajduje się dodatkowa opcja która odpowiada
+ za edycję elementów, a także za ich modyfikacje i tworzenie nowych podelementów
+ (patrz rysunek 3.5).
+ Aby uatrakcyjnić wygląd stopki, użyto komponentu 
+\emph on
+VCoverFlowContainer
+\emph default
+ stworzonego przez Douga McCune (komponent dostępny pod adresem: 
+\bar under
+http://dougmccune.com/blog/2007/11/03/coverflow-flex-component/
+\bar default
+), dzięki czemu stopka zyskuje bardziej dynamiczny charakter (pół przezroczyste
+ tła i przesunięcie w momencie dotknięcia myszką).
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename images/logo_admin.png
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Edycja logo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch NoChildDocument
+status collapsed
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "thesisExample"
+options "alpha"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset nomencl_print
+LatexCommand printnomenclature
+set_width "custom"
+width "2.5cm"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

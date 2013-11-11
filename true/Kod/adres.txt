@@ -1,0 +1,2 @@
+1) http://[ADRES_STRONY]/?a=[ID_ARTYKULU]
+2) http://[ADRES_STRONY]/[ROOT]/../[RODZIC_N]/?a=[ID_ARTYKULU]

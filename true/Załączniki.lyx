@@ -21,6 +21,7 @@
 % that links to image floats jumps to the beginning
 % of the float and not to its caption
 \usepackage[figure]{hypcap}
+\usepackage{longtable}
 
 % the pages of the TOC is numbered roman
 % and a pdf-bookmark for the TOC is added
@@ -282,19 +283,11 @@ Słownik
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float table
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\noindent
-\align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="10" columns="2">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top" width="4cm">
-<column alignment="left" valignment="middle" width="12cm">
+<lyxtabular version="3" rows="23" columns="2">
+<features islongtable="true" longtabularalignment="center">
+<column alignment="center" valignment="top" width="0">
+<column alignment="left" valignment="top" width="75text%">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -320,17 +313,94 @@ Definicja
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\emph on
+AAC
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ang.
+ 
+\emph on
+Advanced Audio Coding - 
+\emph default
+zaawansowany koder audio - algorytm kodowania dźwięku
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Adobe Player
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Darmowa wtyczka do przeglądarek internetowych umożliwiająca wyświetlanie
+ treści stworzonych w języku 
+\emph on
+Adobe Flash
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Bioserwer
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Strona internetowa grupy Bioinformatycznej Politechniki Poznańskiej - temat
+ niniejszej pracy magisterskiej
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
 Crawler
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Program komputerowy który automatycznie wizytuje i indeksuje parametry stron
- internetowych
+Robot Indeksujący, program komputerowy który automatycznie wizytuje i indeksuje
+ parametry stron internetowych
 \end_layout
 
 \end_inset
@@ -341,16 +411,29 @@ Program komputerowy który automatycznie wizytuje i indeksuje parametry stron
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\emph on
 CSS
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Cascading Style Sheets
+ang.
+ 
+\emph on
+Cascading Style Sheets 
+\emph default
+- Kaskadowe Arkusze Stylów - język pomocniczy używany do masowego opisywania
+ elementów (np.
+ strony internetowej 
+\emph on
+HTML
+\emph default
+)
 \end_layout
 
 \end_inset
@@ -361,6 +444,83 @@ Cascading Style Sheets
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\emph on
+CW
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Centrum Wykładowe - budynek Politechniki Poznańskiej
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Google
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Amerykańska międzynarodowa korporacja specjalizująca się w usługach internetowyc
+h, a także nazwa wyszukiwarki internetowej dostępnej na stronie 
+\bar under
+www.google.com 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+IP
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ang.
+ 
+\emph on
+Internet Protocol - 
+\emph default
+Protokół Internetowy: zbiór reguł określających sposób wymiany danych w
+ modelu OSI w wartswie sieciowej
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
 JSON
 \end_layout
 
@@ -370,7 +530,12 @@ JSON
 \begin_inset Text
 
 \begin_layout Plain Layout
-JavaScript Object Notation
+ang.
+ 
+\emph on
+JavaScript Object Notation - 
+\emph default
+standard opisujący struktury danych
 \end_layout
 
 \end_inset
@@ -381,16 +546,24 @@ JavaScript Object Notation
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\emph on
 JVM
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Java Virtual Machine
+ang.
+ 
+\emph on
+Java Virtual Machine - 
+\emph default
+Maszyna Wirtualna Java która pozwala na wykonywania kodu bajtowego Javy
+ i programów do niego kompilowanych
 \end_layout
 
 \end_inset
@@ -401,16 +574,127 @@ Java Virtual Machine
 \begin_inset Text
 
 \begin_layout Plain Layout
+Kamera 
+\emph on
+IP
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Kamera IP to cyfrowe urządzenie do przekazywania obrazu i dźwięku za pomocą
+ Internetu lub sieci wewnętrznej
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Live Streaming / Live Video
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ang.
+ Media Strumieniowe - treść multimedialna (video i audio) nadawana przez
+ połączenie internetowe w czasie rzeczywistym
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+MP4 / MPEG4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ang.
+ 
+\emph on
+Moving Picture Group Layer 4 - 
+\emph default
+grupa standardów opisująca kodowanie audio i video
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+OM
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Open Meetings 
+\emph default
+patrz punkt 2.2.4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
 RIA
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Rich Internet Application
+ang.
+ 
+\emph on
+Rich Internet Application - 
+\emph default
+Bogate Aplikacje Internetowe -
+\emph on
+ 
+\emph default
+termin opisujący aplikacje oferującą jednoekranowy, dynamiczny interfejs
 \end_layout
 
 \end_inset
@@ -421,6 +705,8 @@ Rich Internet Application
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\emph on
 RTMP
 \end_layout
 
@@ -430,7 +716,14 @@ RTMP
 \begin_inset Text
 
 \begin_layout Plain Layout
-Real Time Messaging Protocol
+ang.
+ 
+\emph on
+Real Time Messaging Protocol - 
+\emph default
+protokół przesyłania danych w Internecie stworzony przez 
+\emph on
+Adobe Systems
 \end_layout
 
 \end_inset
@@ -441,16 +734,24 @@ Real Time Messaging Protocol
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\emph on
 SGML
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+ang.
+ 
+\emph on
 Standard Generalized Markup Language
+\emph default
+ - Standardowy Uogólniony Język Znaczników służący do ujednolicania struktury
+ i formatu różnego typu informacji
 \end_layout
 
 \end_inset
@@ -461,16 +762,103 @@ Standard Generalized Markup Language
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\emph on
 SOAP
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Simple Access Object Protocol
+ang.
+ 
+\emph on
+Simple Access Object Protocol - 
+\emph default
+protokół wywoływania zdalnego dostępu do obiektów
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+SZT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+System Zarządzania Treścią
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+ToS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ang.
+ 
+\emph on
+Terms of Service
+\emph default
+ - licencja użytkownia
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+WSDL
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ang.
+ 
+\emph on
+Web Services Description Language - 
+\emph default
+oparty na 
+\emph on
+XML
+\emph default
+ język definiowania usług sieciowych
 \end_layout
 
 \end_inset
@@ -481,6 +869,8 @@ Simple Access Object Protocol
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\emph on
 XML
 \end_layout
 
@@ -490,7 +880,13 @@ XML
 \begin_inset Text
 
 \begin_layout Plain Layout
-Extensible Markup Language
+ang.
+ 
+\emph on
+Extensible Markup Language - 
+\emph default
+Rozszerzalny Język Znaczników - język służący do przestawiania danych w
+ ustrukturalizowany sposób
 \end_layout
 
 \end_inset
@@ -503,17 +899,17 @@ Extensible Markup Language
 
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Słownik pojęć i skrótów
+\begin_layout Section
+Zestawienie kamer USB
 \end_layout
 
-\end_inset
-
-
-\end_layout
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset External
+	template PDFPages
+	filename PDF/Tokarek_praca_magisterska_zestawienie_kamer_wideo.pdf
+	extra LaTeX "pages=-"
 
 \end_inset
 
@@ -522,7 +918,7 @@ Słownik pojęć i skrótów
 
 \begin_layout Standard
 \begin_inset Branch NoChildDocument
-status open
+status collapsed
 
 \begin_layout Standard
 \begin_inset CommandInset bibtex

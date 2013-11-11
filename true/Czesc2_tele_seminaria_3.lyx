@@ -74,7 +74,7 @@ customHeadersFooters
 \output_sync 0
 \bibtex_command default
 \index_command default
-\float_placement h
+\float_placement H
 \paperfontsize 12
 \spacing single
 \use_hyperref true
@@ -274,35 +274,1239 @@ thepage
 \end_layout
 
 \begin_layout Chapter
-Część II: Tele-seminaria
+Część II: Teleseminaria
 \end_layout
 
 \begin_layout Section
-Przetwarzanie
+Wprowadzenie
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Teleseminaria
+\emph default
+ to nazwa kodowa elementu multimedialnego potrzebnego w pracy Grupy Bioinformaty
+cznej Politechniki Poznańskiej.
+ Grupa Bioinformatyczna organizuje regularne spotkania - Seminaria uczelniane
+ - na których pracownicy przedstawiają efekty swoich badań.
+ Aby uczynić te spotkania efektywniejszymi, postanowiono nagrywać je i transmito
+wać przez Internet.
+ Implementacja tej właśnie funkcjonalności jest celem drugiej połowy części
+ pracy magisterskiej.
+ W ramach tego zadania przygotowano:
+\end_layout
+
+\begin_layout Itemize
+wybór potrzebnego sprzętu (kamery video)
+\end_layout
+
+\begin_layout Itemize
+wybór i instalacja oprogramowania pośredniczącego
+\end_layout
+
+\begin_layout Itemize
+dokonanie koniecznych zmian w Bioserwerze
+\end_layout
+
+\begin_layout Standard
+Ostatecznie system został zbudowany w oparciu o architekturę zaprezentowaną
+ na rysunku 4.1.
+ Obraz przedstawiającego dane spotkanie jest rejestrowany w kamerze, a następnie
+ przesyłany do laptopa podłączonego w sali, który dodaje do nagrania dźwięk
+ z mikrofonu.
+ Obraz przesyłany jest na serwer OpenMeetings (serwer zarządzający połączeniami
+ audio/video).
+ Komputer PC w sali przesyła na ten sam serwer zawartość ekranu (ang.
+ 
+\emph on
+desktop
+\emph default
+).
+ Informacja o strumieniu jest przechowywana na serwerze i na nim również
+ jest nagrywana.
+ W przypadku gdy użytkownik końcowy żąda dostępu do strony Bioswerwera,
+ otwiera ona nowy strumień danych z serwera Openmeetings na parametrach
+ podanych z bazy danych.
+ Parametry te mogą zostać zmienione przez administratora systemu w Systemie
+ Zarządzania Treścią.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename images/diagramy/teleseminaria.png
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Architektura systemu 
+\emph on
+Teleseminariów
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
-Technologie wykorzystane
+Wybór kamery
+\end_layout
+
+\begin_layout Standard
+Wszystkie sale oprócz sali 
+\emph on
+Magna Aula
+\emph default
+ w Centrum Wykładowym Politechniki Poznańskiej są pozbawione sprzętu ptrzebnego
+ do transmisji video i audio, dlatego pierwszym etapem pracy nad systemem
+ 
+\emph on
+Teleseminariów
+\emph default
+ był wybór odpowiedniego sprzętu do użytkownia w trakcie realizacji projektu.
+ Kamera została użyta w projekcie do przekazywania obrazu osoby prezentującej
+ treść wystąpienia.
+ Z racji pomocniczej wartości nagrania (kamera rejestruje jedynie dane drugorzęd
+ne - wygląd prowadzącego), obsługiwana przez kamerę rozdzielczość nie była
+ kryterium podstawowym.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 0
+placement o
+overhang 0col%
+width "50col%"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename images/camera.jpg
+	width 35text%
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Wybrana kamera - 
+\emph on
+TRENDnet TV-IP501P 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "TREND2013"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pierwotnie planowano zakup kamery USB podłączanej bezpośrednio pod komputer
+ (patrz załącznik A.2 - stan marzec 2012).
+ Jednakże ze względu lepszą możliwość wykorzystania urządzenia w trybie
+ przenośnym (wpinanie bezpośrednio w Sieć Uczelnianą), zdecydowano się zmienić
+ model na kamerę IP.
+\end_layout
+
+\begin_layout Standard
+Przeanalizowano ofertę rynkową, biorąc pod uwagę atrybuty:
+\end_layout
+
+\begin_layout Itemize
+rodzaj kodowania sygnału (np.: 
+\emph on
+MJPEG
+\emph default
+, 
+\emph on
+FLV
+\emph default
+)
+\end_layout
+
+\begin_layout Itemize
+cena
+\end_layout
+
+\begin_layout Itemize
+jakość obrazu
+\end_layout
+
+\begin_layout Standard
+Ostatecznie wybrany został model 
+\emph on
+TRENDnet TV-IP501P
+\emph default
+.
+ Do tej decyzji przyczyniły się bezpośrednie testy przeprowadzone w okresie
+ marzec/kwiecień 2012 na modelu 
+\emph on
+IP501
+\emph default
+, udostępnionym przez Pana Iwo Lewandowskiego, oraz pozytywne wyniki prób
+ transmisji obrazu.
+\end_layout
+
+\begin_layout Section
+Wybór oprogramowania
+\end_layout
+
+\begin_layout Standard
+Element przekazujący i nagrywający audio/video jest głównym programem zapewniają
+cym funkcjonowanie całego systemu 
+\emph on
+Teleseminariów.
+ 
+\emph default
+Dlatego wymagał on dokładnego przygotowania i przetestowania wspieranej
+ funkcjonalności.
+ Od programu oczekiwano spełnienia nastepujących kryteriów:
+\end_layout
+
+\begin_layout Itemize
+restrumieniowania danych audiowizualnych
+\end_layout
+
+\begin_layout Itemize
+nagrywanie otrzymanych danych
+\end_layout
+
+\begin_layout Itemize
+udostępniany na podstawie darmowej licencji
+\end_layout
+
+\begin_layout Standard
+W fazie pierwszej rozważano stworzenie przykładowego projektu w ramach bieżącej
+ pracy magisterskiej - jednak po inwestygacji, zadanie to zostało uznane
+ za zbyt pracochłonne w porównaniu z zakresem projektu.
+ Następnie rozpoczęto testy różnych systemów streamingowych, które zostały
+ uznane za kompatybilne z ustalonymi wymaganiami.
+ Systemy te objemują:
 \end_layout
 
 \begin_layout Subsection
-Adobe Flex
+
+\emph on
+Adobe Flash Server 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Adobe Flash Server 
+\emph default
+jest
+\emph on
+ 
+\emph default
+serwerem usług multimedialnych stworzonym przez firmę 
+\emph on
+Adobe
+\emph default
+.
+ Pozwala on w łatwy sposób restrumieniować obraz z kamer i pulpitu, odbierając
+ i wysyłając filmy w formacie 
+\emph on
+flv
+\emph default
+ i 
+\emph on
+MPEG, 
+\emph default
+również w protokole 
+\emph on
+RTMP.
+
+\emph default
+ Jednakże program ma sporą wadę - jest płatny.
+ Jedyna wersja darmowa jaka istnieje - 
+\emph on
+Development
+\emph default
+ posiada ograniczenia do 10 minut nagranego materiału i 10 jednoczesnych
+ połączeń.
+ Jest to zbyt mało, dlatego program nie spełnia kryteriów i nie mógł być
+ zaakceptowany do dalszej pracy.
+\end_layout
+
+\begin_layout Subsection
+
+\emph on
+RED5
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Red5
+\emph default
+ jest darmowym projektem na licencji 
+\emph on
+Apache2
+\emph default
+.
+ Dostępnym pod adresem: 
+\bar under
+http://code.google.com/p/red5/
+\bar default
+ .
+ Program ten znakomicie dekoduje i restrumieniuje różne rodzaje strumieni
+ danych audiowizualnych (
+\emph on
+flv, MP4, AAC
+\emph default
+) i protokołów 
+\emph on
+RTMP.
+
+\emph default
+ Jednakże program nie ma wbudowanej możliwości współdzielenia obrazu pulpitu.
+ Teoretycznie istnieje możliwość użycia w tym celu programu firmy trzeciej
+ - 
+\emph on
+Adobe Flash Media Encoder 
+\emph default
+- zakodowanie przy jego pomocy obrazu pulpitu i wysłanie go na serwer Red5.
+ Jednakże 
+\emph on
+ToS
+\emph default
+ (ang.
+ licencja użytkowania) tego programu stwierdza, że można go użyć jedynie
+ do współpracy z programem
+\emph on
+ Adobe Flash Server
+\emph default
+, inne użycie byłoby nielegalne.
+ Postanowiono znaleźć lepsze rozwiązanie.
+\end_layout
+
+\begin_layout Subsection
+
+\emph on
+ZoneMinder
+\end_layout
+
+\begin_layout Standard
+Program został stworzony jako serwer zbiorczy dla telewizji przemysłowej
+ (wyświetlania i nagrywania obrazu kamer ochrony).
+ Napisany został w języku 
+\emph on
+PHP, Perl, C++
+\emph default
+ i jest dostepny pod adresem: 
+\bar under
+http://www.zoneminder.com/
+\bar default
+ .
+ Aplikacja, oprócz standardowego wsparcia dla protokołów 
+\emph on
+RTMP
+\emph default
+ i danych 
+\emph on
+flv
+\emph default
+, oferuje również łatwiejszą możliwość połączenia się z sygnałem z perspektywy
+ języka 
+\emph on
+Flex
+\emph default
+.
+ Program nawiązuje rownież bezpośrednie połącznie z kamerą przy pomocy kodowania
+ 
+\emph on
+MJPEG
+\emph default
+.
+ Jednakże także ten program nie posiada wbudowanej możliwości współdzielenia
+ pulpitu.
+ Przez okres dwóch, trzech miesięcy prowadzono prace integracyjne z systemem
+ 
+\emph on
+ZoneMinder
+\emph default
+, jednak odkrycie programu obiecującego lepsze wyniki - spowodowały przerzucenia
+ wysiłku na rzecz wykorzystanie aplikacji 
+\emph on
+OpenMeetings
+\emph default
+ (patrz punkt 4.4).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename images/Screenshot-Home - Montage - Mozilla Firefox.jpg
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Przykładowe okno programu pokazujące 4 kamery (źródło 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ZONE2013"
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
-Przypadki użycia
+Praca z OpenMeetings
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+OpenMeetings 
+\emph default
+jest oprogramowaniem, które ostatecznie spełniło wszystkie kryteria wymagane
+ dla serwera pośredniczącego w wymianie strumieni multimedialnych.
+ Oprogramowanie to jest zbiorem narzędzi internetowych (w jego skład wchodzi
+ m.in.: podserwer 
+\emph on
+Red5
+\emph default
+, przedstawiony w punkcie 4.3.2), które po połączeniu tworzą wirtualną platformę
+ edukacyjną - umożliwiającą organizowanie spotkań, używanie wirtualnych
+ tablic i przekazywanie/nagrywanie obrazów kamer i pulpitów.
+ Po niewielkich zmianach w kodzie źródłowym, transmisje stały się również
+ dostępne również po stronie 
+\emph on
+Bioserwera.
+
+\emph default
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename images/okno pokoju OM.png
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Wygląd 
+\emph on
+pokoju
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 0
+placement o
+overhang 0col%
+width "50col%"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename images/okno share OM.png
+	width 45text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Panel współdzielenia pulpitu
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+W pracy z programem 
+\emph on
+OpenMeetings
+\emph default
+ podstawowym pojęciem jest 
+\emph on
+pokój.
+ Pokój
+\emph default
+ to specjalnie wydzielony obszar wirtualny dla użytkowników w ramach którego
+ mogą oni uczestniczyć w wydzielonej konferencji.
+ W ramach tej konferencji użytkownik może współdzielić swój pulpit i nagranie
+ lokalnej kamery ze współużytkownikami (przykład pokoju na rysunku 4.4).
+ Standardowa praca z 
+\emph on
+OpenMeetings
+\emph default
+ obejmuje trzy fazy:
+\end_layout
+
+\begin_layout Enumerate
+Użytkownik loguje się do systemu, ustawia opcje systemu, parametry 
+\emph on
+pokoju
+\emph default
+;
+\end_layout
+
+\begin_layout Enumerate
+Użytkownik wchodzi do 
+\emph on
+pokoju
+\emph default
+, wybiera źródło sygnału audio/video wysyłanego na serwer, decyduje czy
+ spotkanie ma być nagrywane;
+\end_layout
+
+\begin_layout Enumerate
+Użytkownik kończy pracę w 
+\emph on
+pokoju
+\emph default
+, System generuje i kataloguje pliki dodatkowe (np.
+ nagrania);
+\end_layout
+
+\begin_layout Standard
+Komunikacja z serwerem 
+\emph on
+OpenMeetings 
+\emph default
+odbywa się za pośrednictwem dokumentów 
+\emph on
+WSDL.
+
+\emph default
+ Dokumenty te określają jakie funkcjonalności udostępniane są przez serwer:
+ nazwy funkcji, argumenty, wartości zwracane.
+ Po pobraniu dokumentu
+\emph on
+, Flex
+\emph default
+ posiada wbudowane opcje wykorzystania przetworzenia zawartości pobranego
+ pliku 
+\emph on
+WSDL 
+\emph default
+na funkcje, które po wywołaniu powodują ściągnięcie wymaganych danych z
+ serwera (patrz rysunek 4.6).
+ Wpierw pobierany jest numer sesji użytkownika (2) i przeprowadzane logowanie
+ do systemu (4).
+ Następnie pobierana jest lista użytkowników danego 
+\emph on
+pokoju 
+\emph default
+(6).
+ Jeśli Bioserwer zauważy w pokoju współdzielenie pulpitu lub kamery (są
+ to dwa osobne strumienie danych), to zareaguje odpowiednio i podłączy się
+ pod strumień danych ((8) z adresem w formacie: rtmp://[OPENMEETINGS_URL]:
+ [OPENMEETINGS_PORT]/ [OPENMEETINGS_FOLDER]/ [ID_POKOJU]).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 0
+placement O
+overhang 0in
+width "50col%"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename images/diagramy/SequenceDiagram.jpg
+	width 40text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Sekwencja stanów
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Program 
+\emph on
+OpenMeetings
+\emph default
+ nie był jednak przygotowany na takie wykorzystanie.
+ Funkcja zwracała jedynie pierwszy strumień na liście, a nie wszystkie dostępne
+ w pokoju (np.
+ z strumienia kamer trzech użytkowników + jeden strumień pulpitu, program
+ zwróciłby jedynie jeden strumień o najmniejszym 
+\emph on
+ID
+\emph default
+).
+ Dlatego należało ściągnać kod źródłowy programu, udostępniony na licencji
+ 
+\emph on
+Apache
+\emph default
+ (można z niego korzystać pod warunkiem nie łamania praw patentowych oryginalneg
+o właściciela) i przekompilować go zmieniając funkcje - 
+\emph on
+getClientListByRoom
+\emph default
+ w pliku 
+\emph on
+org/apache/openmeetings/session/SessionManager.java
+\emph default
+, poprzez wykomentowanie ignorowania klientów AV i współdzielących pulpit.
+ Po tej operacji Bioserwer miał pełen dostęp do zasobów 
+\emph on
+OM.
+\end_layout
+
+\begin_layout Standard
+W trakcie tworzenia serwera, należy pamiętać że program odbiera i wysyła
+ dane na kilku portach, o odblokowaniu których trzeba pamiętać.
+ Są to porty:
+\end_layout
+
+\begin_layout Itemize
+port 1935 - port udostępniający połączenia 
+\emph on
+RTMP
+\end_layout
+
+\begin_layout Itemize
+port 5080 - port połączenia z główną aplikacją
+\end_layout
+
+\begin_layout Itemize
+port 8088 - zapasowy port połączenia z 
+\emph on
+RTMP
+\end_layout
+
+\begin_layout Standard
+Numery portów możnaa zmienić w pliku konfiguracyjnym 
+\emph on
+conf/red5.properties
+\emph default
+ (serwer) i 
+\emph on
+webapps/openmeetings/conf.xml
+\emph default
+ (klient).
+ Obecnie Openmeetings został zainstalowany na serwerze dostępnym pod adresem:
+ 
+\bar under
+antares.cs.put.poznan.pl:5080 
+\bar default
+.
 \end_layout
 
 \begin_layout Section
-Sposób rozwiązania
+Część Bioserwerowa - Video w czasie rzeczywistym
+\end_layout
+
+\begin_layout Standard
+Aby wykorzystać możliwości jakie daje program 
+\emph on
+OpenMeeting,
+\emph default
+ należało wyposażyc 
+\emph on
+Bioserwer
+\emph default
+ w elementy, które będą dostosowane do odbioru danych wysyłanych przez 
+\emph on
+OpenMeetings.
+
+\emph default
+ Artykuły w
+\emph on
+ Bioserwerze 
+\emph default
+tworzą strukturę drzewa, gdzie liście to elementy końcowe widoczne dla użytkowni
+ka w danym artykule.
+ Są one zapisane jako zbiór znaczników 
+\emph on
+XML
+\emph default
+ z opisem parametró
+\emph on
+w, 
+\emph default
+to oznacza że dodanie nowego elementu (
+\emph on
+LiveVideo
+\emph default
+ - ang.
+ 
+\emph on
+Video
+\emph default
+ w czasie rzeczywistym) ograniczyło się do stworzenia nowej klasy i parsowania
+ jej parametrów do i z bazy danych.
+\end_layout
+
+\begin_layout Standard
+Na rysunku 4.7 zaprezentowany jest edytor elementu 
+\emph on
+LiveVideo.
+ 
+\emph default
+Sam element składa się z trzech części, które ostatecznie są w takiej formie
+ widoczne dla użytkownika końcowego w 
+\emph on
+Bioserwerze
+\emph default
+:
+\end_layout
+
+\begin_layout Itemize
+strumieniowanego obrazu z kamery (czerwona obwódka na obrazie)
+\end_layout
+
+\begin_layout Itemize
+strumieniowanego obrazu z pulpitu komputera prowadzącego transmisję (obwódka
+ zielona)
+\end_layout
+
+\begin_layout Itemize
+panel sterujący (obwódka niebieska)
+\end_layout
+
+\begin_layout Standard
+Sposób połączenia 
+\emph on
+Bioserwera
+\emph default
+ i 
+\emph on
+OpenMeetings
+\emph default
+ został już przedstawiony na rysunku 4.6.
+ Element będzie domyślnie szukał ścieżki audio w połączeniu kamery.
+ Zaś obraz uzyskiwany jest z dwóch różnych 
+\emph on
+pokoi
+\emph default
+ (obraz pulpitu z 
+\emph on
+pokoju konferencyjnego
+\emph default
+ (
+\emph on
+Conference Room
+\emph default
+), obraz kamery z 
+\emph on
+pokoju rozmów kwalfikacyjncyh
+\emph default
+ 
+\emph on
+(Interview Room
+\emph default
+)).
+\end_layout
+
+\begin_layout Standard
+Panel sterujący oprócz możliwości zatrzymania/wznowienia połączenia (
+\emph on
+Stop/Play
+\emph default
+) i zmiany głośności (pasek głośności i przycisk 
+\emph on
+Mute
+\emph default
+), posiada również możliwość przełączenia domyślnego położenia kamery (z
+ lewego-górnego ang.
+ 
+\emph on
+Upper-left
+\emph default
+ na dowolne) w każdym momencie odtwarzania połączenia.
+ Możliwość ta została dodana, by obraz kamery nie przysłaniał ważnego fragmentu
+ prezentacji w trakcie konferencji.
+ Przycisk 
+\emph on
+Fullscreen
+\emph default
+ umożliwia przejście do trybu pełnoekranowego, który powoduje usunięcie
+ stopki po lewej i loga u góry strony (patrz rysunek 2.10) przez co zwiększa
+ się obszar roboczy aplikacji.
+ Jest to przydatne gdy w trakcie konferencji prezentowane są teksty drobnym
+ drukiem, które w innym przypakdu są trudno widoczne.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename images/admin_live_video2.png
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+System Zarządzania Treścią - połączenie czasu rzeczywistego
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Elementy z żółtej obwódki, umożliwiają edycję parametrów połączenia.
+ Paremtry te opisują (od góry):
+\end_layout
+
+\begin_layout Itemize
+adres server 
+\emph on
+OpenMeetings
+\emph default
+ (
+\emph on
+serverURL
+\emph default
+),
+\end_layout
+
+\begin_layout Itemize
+port serwera 
+\emph on
+RTMP
+\emph default
+ (
+\emph on
+RTMP
+\emph default
+ server port) - port po którym przesyłane są strumienie multimedialne,
+\end_layout
+
+\begin_layout Itemize
+port 
+\emph on
+HTTP 
+\emph default
+(
+\emph on
+HTTP
+\emph default
+) - port na którym możliwe jest połączenie z programem 
+\emph on
+Openmeetings - 
+\emph default
+w celu pobrania pliku 
+\emph on
+WSDL,
+\end_layout
+
+\begin_layout Itemize
+ścieżka na serwerze do zawartości 
+\emph on
+OpenMeetings
+\emph default
+ (
+\emph on
+Server folder
+\emph default
+),
+\end_layout
+
+\begin_layout Itemize
+ID pokoju udostępniającego pulpit (
+\emph on
+Room ID Desktop
+\emph default
+),
+\end_layout
+
+\begin_layout Itemize
+ID pokoju udostępniającego widok kamery (
+\emph on
+Room
+\emph default
+ 
+\emph on
+ID
+\emph default
+ 
+\emph on
+Camera
+\emph default
+),
+\end_layout
+
+\begin_layout Itemize
+Login do OpenMeetings (
+\emph on
+OpenMeetings Login
+\emph default
+),
+\end_layout
+
+\begin_layout Itemize
+Hasło do OpenMeetings (
+\emph on
+OpenMeetings
+\emph default
+ 
+\emph on
+Password
+\emph default
+)
+\end_layout
+
+\begin_layout Standard
+Dodatkowo dwa przyciski poniżej służą do załadowania ustawień do podglądu
+ (
+\emph on
+Load Data to PreView
+\emph default
+) i zapisania ich na serwerze (
+\emph on
+SAVE CHANGES
+\emph default
+).
 \end_layout
 
 \begin_layout Section
-Testy
+Część Bioserwerowa - Archiwum Teleseminariów
+\end_layout
+
+\begin_layout Standard
+Archiwum 
+\emph on
+Teleseminariów, 
+\emph default
+zostało stworzone z myślą o przechowywaniu nagrań stworzonych przez 
+\emph on
+OpenMeetings
+\emph default
+ w trakcie transmisji obrazu.
+ Na rysunku 4.8 zaprezentowano wygląda edytora elementu archiwalnego w panelu
+ administratorskim.
+ Składa się on z:
+\end_layout
+
+\begin_layout Itemize
+nagranie kamery i pulpitu (kolor czerwony),
+\end_layout
+
+\begin_layout Itemize
+po prawej stronie (kolor biały) stworzono listę zakładek dla danego archiwum.
+ Zakładki służą szybkiej nawigacji po odtwarzanym nagraniu.
+ Składnia zakładki wygląda następująco: [CZAS_W_SEKUNDACH]: [ETYKIETA].
+ Naciśnięcie na zakładkę powoduje przesunięcie nagrania do danego momentu.
+ Zakładki są sortowane rosnąco po atrybucie czasu,
+\end_layout
+
+\begin_layout Itemize
+przycisk pokazaniu/ukryciu paska zakładek (kolor żółty),
+\end_layout
+
+\begin_layout Itemize
+panel sterujący (kolor niebieski),
+\end_layout
+
+\begin_layout Standard
+Na panelu sterującym znajdują się przyciski pozwalające tymczasowo zatrzymać
+ (
+\emph on
+Pause
+\emph default
+), całkowicie zatrzymać (
+\emph on
+Stop
+\emph default
+) lub wznowić (
+\emph on
+Play
+\emph default
+) odtwarzanie.
+ Poniżej są kontrolery położenia kamery na obszarze czerwonym (na rysunku
+ 4.8 w pozycji prawy-górny róg - ang.
+ 
+\emph on
+Upper-right
+\emph default
+).
+ Przyciski manipulacji głosem i trybem pełnoekranowym zostały już opisane
+ w punkcie 4.5.
+ Ostatnim elementem sterującym jest pasek postępu.
+ Naciśnięcie na pasek powoduje przeskoczenie do danej sekundy nagrania.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename images/archiwum2.png
+	width 75text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+System Zarządzania Treścią - nagranie archiwalne
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Panel administracyjny - w sekcji zielonej, składa się z dwóch części.
+ 
+\end_layout
+
+\begin_layout Itemize
+Po lewej, należy podać ścieżki plików nagrań - powinny one się znajdować
+ w serwerowym folderze 
+\emph on
+video
+\emph default
+.
+ Przyciskiem 
+\emph on
+Load DATA
+\emph default
+ system przeładowuje się aktualnie odtwarzane nagranie danymi z lewej kolumy.
+ 
+\end_layout
+
+\begin_layout Itemize
+W kolumnie po prawej można edytować zakładki.
+ Wybranie danej zakładki powoduje załadowanie jej danych do odpowiednich
+ pól edytujących.
+ Pole 
+\emph on
+Name label
+\emph default
+ odpowiada za nazwę etykiety, a 
+\emph on
+Time label
+\emph default
+ za czas w sekundach.
+ Wyedytowanie wybranej zakładki następuje po naciśnięciu przycisku 
+\emph on
+EDIT.
+ 
+\emph default
+Przycisk 
+\emph on
+DELETE SELECTED 
+\emph default
+usunie wybraną zakładkę, a 
+\emph on
+ADD
+\emph default
+ doda nową z danymi aktualnie wpisanymi w pola edytujące.
 \end_layout
 
 \begin_layout Section
-Efekt końcowy
+Wyniki końcowe
+\end_layout
+
+\begin_layout Standard
+W ramach projektu udało się stworzyć stabilną bazę pod działanie systemu
+ 
+\emph on
+Teleseminariów.
+ 
+\emph default
+Przygotowano 
+\emph on
+Bioserwer
+\emph default
+ na przyjęcie nagrań video i administrowanie nimi.
+ Zainstalowano również program
+\emph on
+ OpenMeetings
+\emph default
+ na serwerze Uczelnianym.
+ Odblokowano porty: 80, 5080, 8088 w salach 1.21, 1.23 i 13 w budynku CW.
+ Niestety w sali 13 brakuje odpowiedniego sprzętu do przekazywania dźwięku
+ z mikrofonów do urządzeń zewnętrznych, dlatego pełna praca z systemem 
+\emph on
+Teleseminariów
+\emph default
+ jest możliwa jedynie w dwóch innych salach.
+ System został przetestowany i jest gotów do użycia.
 \end_layout
 
 \begin_layout Standard

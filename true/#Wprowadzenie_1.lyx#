@@ -282,10 +282,10 @@ Multimedia w Bioinformatyce
 \end_layout
 
 \begin_layout Standard
-Komunikacja w Internecie pozwala na szybką wymianę informacji pomiędzy różnymi
- miejscami na świecie niemal natychmiastowo.
- Zmienia to sposób postrzegania świata przez ludzi, sprawiając że szybkość
- i jakość udostępniania wiadomości ma krytyczne znaczenie dla wizerunku
+Komunikacja w Internecie pozwala na sprawną wymianę informacji pomiędzy
+ różnymi miejscami na świecie niemal natychmiastowo.
+ Zmienia to sposób postrzegania rzeczywistości przez ludzi, sprawiając że
+ szybkość i jakość udostępniania wiadomości ma krytyczne znaczenie dla wizerunku
  firmy, organizacji, czy nawet pojedynczej osoby.
  Strona internetowa jest dziś wizytówką, bramą wizerunkową, od zawartości
  której zależy postrzeganie jej właściciela.
@@ -302,10 +302,10 @@ status open
 
 \begin_layout Plain Layout
 \noindent
-\align left
+\align center
 \begin_inset Graphics
-	filename images/vector_field.png
-	scale 70
+	filename images/DI_vecfield.jpg
+	width 25text%
 
 \end_inset
 
@@ -313,10 +313,19 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
+\noindent
+\align center
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Pole wektorów
+Pole wektorów w płynie - przykład użycia wizualizacji danych (źródło 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "MATH2013"
+
+\end_inset
+
+) 
 \end_layout
 
 \end_inset
@@ -331,20 +340,21 @@ Szeroko rozumiane multimedia są dziś najlepszą formą dotarcia do odbiorcy.
  wiedzę niż każdy z tych elementów osobno, co wiemy m.in.
  dzięki badaniom mózgu i psychiki ludzkiej.
  Z racji tego że człowiek przyswaja wiedzę najlepiej odbierając informacje
- wszytkimi zmysłami, suchy tekst nie ma takiej mocy uczącej jak ilustracja,
- zaś ilustracja jest gorszym nauczycielem niż animacja.
+ wszystkimi zmysłami, suchy tekst nie uczy tak dobrze jak ilustracja, zaś
+ ilustracja jest gorszym nauczycielem niż animacja.
  Dlatego w ciągu ostatnich 50 lat w biotechnologii i fizyce biomolekularnej
- możemy obserwować wzrastające wykorzystanie technologii multimedialnych
- aby lepiej odwzorować .
- ułatwić odbiór i analizę informacji zgromadzonych w trakcie eksperymentów.
- <w celu lepszego odwzorowania świata rzeczywistego.
- I lepszej nauki>celem polepszenia zrozumienia i edukacji przy obserwacji
- biologicznej'.
- Komputery i wizualizację wykorzystuję się aby przedstawić dokładnie mikroskopię
-, obrazowanie rezonansu magnetycznego, dynamikę molekularną.
- Pomagają one również uprościć zrozumienie' zależności w drzewach filogenetyczny
-ch, ewolucji genomu i jego asemblacji.
- <>
+ możemy obserwować trend zintensyfikowania użycia technologii multimedialnych
+ celem odwzorowania zjawisk zachodzących w świecie rzeczywistym.
+ Używa się ich aby przedstawić mikroskopię, obrazowanie rezonansu magnetycznego,
+ dynamikę molekularną.
+ Pomagają one również w analizie zależności w drzewach filogenetycznych,
+ ewolucji genomu i jego asemblacji.
+ Wykorzystuje się je również po to by ułatwić odbiór i analizę informacji
+ zgromadzonych w trakcie eksperymentów, dzięki czemu proces edukacji przebiega
+ sprawniej.
+ Obserwowanie zmian, które w laboratorium trwałyby kilka dni i wymagałyby
+ sprzętu wartego miliony można urzeczywistnić o wiele mniejszym nakładem
+ środków.
 \end_layout
 
 \begin_layout Standard
@@ -357,10 +367,10 @@ status open
 
 \begin_layout Plain Layout
 \noindent
-\align left
+\align center
 \begin_inset Graphics
-	filename images/czasteczka.png
-	scale 65
+	filename images/220px-InsulinHexamer.jpg
+	width 15text%
 
 \end_inset
 
@@ -371,7 +381,14 @@ status open
 \begin_inset Caption
 
 \begin_layout Plain Layout
-Wizualizacja cząsteczki
+Wizualizacja cząsteczki insuliny (źródło 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "WIKI2011"
+
+\end_inset
+
+)
 \end_layout
 
 \end_inset
@@ -387,22 +404,30 @@ Wizualizacja cząsteczki
 
 Dlatego najlepszym sposobem na przekazanie najnowszych informacji z dziedziny
  bioinformatyki jest wykład w trakcie którego można wyjaśnić skomplikowane
- sprawy' zgromadzonemu audytorium posiłkując się przy tym multimedialnymi
+ zagadnienia zgromadzonemu audytorium, posiłkując się przy tym multimedialnymi
  pomocami.
  Jednak co zrobić w momencie gdy zainteresowane osoby nie mogą zjawić się
- na miejscu konferencji? Tutaj z pomocą przychodzi technologia i możliwość
+ na miejscu konferencji ? Tutaj z pomocą przychodzi technologia i możliwość
  transmitowania wydarzenia w Internecie.
  Wykorzystując fakt tworzenia nowej strony, Grupa Bioinformatyczna Politechniki
  Poznańskiej postanowiła wyjść naprzeciw oczekiwaniom swoich słuchaczy i
- ułatwić im odbiór informacji, umieszczając dodatkowy moduł: 'Tele-seminariów'
+ ułatwić im odbiór informacji, umieszczając dodatkowy moduł: 'Teleseminariów'
  i pozwalając uczestniczyć w spotkaniach także za pośrednictwem Internetu.
 \end_layout
 
 \begin_layout Standard
-Strona jest jednak na tyle przydatna, na ile można do niej trafić z zewnątrz.
- Z tego powodu stronę Bioserwera, stworzonej za pomocą technologii Flex,
- należało uczynić przyjazną dla wyszukiwarek, tak, aby ranking strony w
- wyszukiwarkach utrzymał się na satysfakcjonującej pozycji.
+Strona jest jednak jedynie na tyle przydatna, na ile można do niej trafić
+ z zewnątrz.
+ Z tego powodu stronę Bioserwera, stworzonej za pomocą technologii 
+\emph on
+Flex
+\emph default
+, należało uczynić przyjazną dla wyszukiwarek, dbając o ranking strony i
+ możliwość jej katalogowania przez 
+\emph on
+crawlery
+\emph default
+ firm zewnętrznych.
  Dodano również szereg zmian mających zadbać o komfort pracy zarówno po
  stronie administracyjnej jak i użytkownika końcowego.
 \end_layout
@@ -422,22 +447,21 @@ Cel i zakres pracy
 \begin_layout Standard
 Celem niniejszej pracy jest wzbogacenie istniejącej portalu internetowego
  Grupy Bioinformatycznej (Bioserwera) o elementy multimedialne oraz dodatnie
- nowej funkcjonalnosci do modułu administrowania serwisem.
+ nowej funkcjonalności do modułu administrowania serwisem.
  Praca została podzielona na dwie części: pierwsza odpowiadająca za bezpośrednie
- zmiany na stronie, druga za stworzenie dodatkowego modułu 'Tele-seminariów'.
+ zmiany na stronie, druga za stworzenie dodatkowego modułu 'Teleseminariów'.
 \end_layout
 
 \begin_layout Standard
 Pierwsza cześć pracy odpowiada za opisanie zmian w obrębie strony internetowej.
- Zmiany te rozszerzają funkcjonalność strony między innymi o polepszone
- wyszzukiwanie i wprowadzenie systemu ról w panelu administracyjnym.
+ Zmiany te rozszerzają funkcjonalność strony poprzez wprowadzenie systemu
+ ról w panelu administracyjnego oraz edytowalną stopkę.
  Strona została również wyposażona w dodatkowe elementy ułatwiające jej
- katalogowanie przez światowe wyszukiwarki oraz system automatycznego generowani
-a wpisów z wiadomości elektronicznych.
+ katalogowanie przez światowe wyszukiwarki.
 \end_layout
 
 \begin_layout Standard
-Część druga, 'Tele-seminaria' jest poświęcona modułowi odpowiadającemu za
+Część druga, 'Teleseminaria' jest poświęcona modułowi odpowiadającemu za
  tworzenie i zarządzanie transmisjami video z seminariów dyplomowych Grupy
  Bioinformatycznej.
  System jest w stanie działać zarówno w trybie online jak i odtwarzać archiwalne
@@ -453,37 +477,132 @@ Układ pracy oraz uwagi dotyczące realizacji tematu
 \end_layout
 
 \begin_layout Standard
-W trakcie realizacji pracy zostały wyznaczone nastepujące zadania:[pewnie
- coś będzie tutaj dochodziło]
+W trakcie realizacji pracy zostały wyznaczone nastepujące zadania:
 \end_layout
 
-\begin_layout Standard
--Porównanie web-kamer - budynek CW w którym odbywają się zajęcia seminaryjne
+\begin_layout Itemize
+Porównanie web-kamer - budynek CW w którym odbywają się zajęcia seminaryjne
  nie jest wyposażony w odpowiedni sprzęt video, zatem należało dokonać wyboru
  stosownego urządzenia do zakupu
 \end_layout
 
-\begin_layout Standard
--'Tele-seminaria' - stworzenie systemu do tele-konferencji, zarówno części
- widocznej dla użytkownika, jak i administracji oraz oprogramowania nagrywająceg
-o (napisania skryptów i wybranie gotowych narzędzi)
+\begin_layout Itemize
+
+\emph on
+Teleseminaria
+\emph default
+ - stworzenie systemu do telekonferencji, zarówno części widocznej dla użytkowni
+ka, jak i administracji oraz oprogramowania nagrywającego (napisania skryptów
+ i wybranie gotowych narzędzi)
 \end_layout
 
-\begin_layout Standard
--Ułatwienia dla wyszukiwarek - stworzenie podstrony która jest widoczna
- dla crawlerów wyszukiwarek internetowych, która umożliwia zakatalogowanie
- Bioserwera
+\begin_layout Itemize
+Ułatwienia dla wyszukiwarek - stworzenie podstrony która jest widoczna dla
+ crawlerów wyszukiwarek internetowych, która umożliwia zakatalogowanie Bioserwer
+a
 \end_layout
 
-\begin_layout Standard
--Role w administracji - dodanie możliwości edycji praw dostępu do artykułów
+\begin_layout Itemize
+Role w administracji - dodanie możliwości edycji praw dostępu do artykułów
  dla poszczególnych użytkowników w panelu administracyjnym systemu
 \end_layout
 
+\begin_layout Section
+Charakterystyka źródeł
+\end_layout
+
 \begin_layout Standard
--Przechwytywanie maili i automatyczne tworzenie postów - korzystając z okazji
- że większość powiadomień w grupie odbywa się drogą mailową, stworzono moduł
- automatycznie konwertujący te informacje na post na stronie informacyjnej
+W trakcie realizacji projektu korzystano z zewnętrznych źródeł opisujących
+ użyte technologie, są to między innymi:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Adobe Flex
+\end_layout
+
+\begin_layout Standard
+Podstawy technologii zostały przedstawione w: 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "SSG2010"
+
+\end_inset
+
+, zaś pomoc w pisaniu kodu źródłowego i rozwiązywaniu możliwych błędów zapewniła
+ baza danych funkcji firmy 
+\emph on
+Adobe
+\emph default
+ dostępna w 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ADOBE2013"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+PHP
+\end_layout
+
+\begin_layout Standard
+Internetowa baza danych języka 
+\emph on
+PHP, 
+\emph default
+dostepna pod adresem 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "PHP2013"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+MySQL
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+MySQL
+\emph default
+ - składnia i procedury ze strony 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "SQL2013"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Technologie Multimedialne
+\end_layout
+
+\begin_layout Standard
+Przy wprowadzaniu elementów multimedialnych w systemie posiłkowano się książką
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "DOM2010"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
